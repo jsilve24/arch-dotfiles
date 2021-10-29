@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Justin's Backup Script -- should be run as root
+
+# Mount both partitions
+mkdir -p /mnt/borgbak
+mount -t ext4 /dev/sda1 /mnt/borgbak
+mkdir -p /mnt/sysbak
+mount -t ext4 /dev/sda3 /mnt/sysbak
+
+# Backup with Timeshift
+timeshift --create --snapshot-device /dev/sda3 --rsync
+
+# Backup with Bor
+# https://borgbackup.readthedocs.io/en/stable/quickstart.html#important-note-about-permissions
+#export BORG_PASSCOMMAND='gpg --decrypt /home/jds6696/.secrets/borg-passphrase.gpg'
+DATE=$(date --iso-8601)-$(hostname)
+export BORG_RELOCATED_REPO_ACCESS_IS_OK=no
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no
+echo "Starting borg backup for $DATE"
+
+BORG_OPTS="--stats --verbose"
+
+borg create $BORG_OPTS \
+    /mnt/borgbak/borg::$DATE \
+    /home/jds6696/
+
+
+# Unmount
+echo "Unmounting Drives"
+umount /mnt/sysbak
+umount /mnt/borgbak

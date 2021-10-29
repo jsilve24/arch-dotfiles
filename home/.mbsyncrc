@@ -1,0 +1,94 @@
+# mbsyncrc based on https://ryanwhittingham.com/using-multiple-email-accounts-with-mu4e/
+# in turn based on
+# http://www.ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html
+# https://github.com/benswift/.dotfiles/blob/master/mbsyncrc
+
+### Gmail
+IMAPAccount gmail
+Host imap.gmail.com
+User jsilve24@gmail.com
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.gmail_mailpass.gpg"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# Remote storage
+IMAPStore gmail-remote
+Account gmail
+
+# Local storage
+MaildirStore gmail-local
+# Trailing / is important
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/INBOX
+
+Channel gmail-inbox
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX"
+Create Both
+Expunge Both 
+SyncState *
+
+# Trash may have a different name
+# based on your Locale
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Trash"
+Slave :gmail-local:"Gmail.Trash"
+Create Both
+Expunge None
+SyncState *
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:"Gmail.Sent"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Master :gmail-remote:"[Gmail]/Drafts"
+Slave :gmail-local:"Gmail.Drafts"
+Create Both
+Expunge Both
+SyncState *
+
+Channel gmail-store
+Master :gmail-remote:"store"
+Slave :gmail-local:"Gmail.store"
+Create Both
+Expunge Both
+SyncState *
+
+Group gmail
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-trash
+Channel gmail-drafts
+Channel gmail-store
+
+# Outlook
+IMAPAccount psu
+Host localhost
+Port 1143
+AuthMechs LOGIN
+SSLType None
+User jds6696@psu.edu
+PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.psu_mailpass.gpg"
+
+IMAPStore psu-remote
+Account psu
+
+MaildirStore psu-local
+SubFolders Verbatim 
+Path ~/.mail/psu/
+Inbox ~/.mail/psu/INBOX/
+
+Channel psu
+Master :psu-remote:
+Slave :psu-local:
+Patterns *
+Create Both
+#Sync All
+Expunge Both
+SyncState *
