@@ -41,6 +41,10 @@ exec --no-startup-id dropbox start
 ## Start davmail
 exec --no-startup-id davmail -server
 
+## start caffeine
+exec --no-startup-id caffeine-ng
+
+
 ## Start emacs deamon
 #exec --no-startup-id emacs --daemon
 
