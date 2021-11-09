@@ -46,7 +46,7 @@ exec --no-startup-id caffeine-ng
 
 
 ## Start emacs deamon
-#exec --no-startup-id emacs --daemon
+exec --no-startup-id emacs --daemon
 
 ## Run capslock script
 exec ~/bin/capslock.sh; mode "default"
@@ -107,14 +107,14 @@ bindsym Mod4+semicolon exec --no-startup-id i3-dmenu-desktop
 
 
 # change focus
-bindsym Mod4+$left focus left
-bindsym Mod4+$down focus down
-bindsym Mod4+$up focus up
-bindsym Mod4+$right focus right
-# bindsym Mod4+$left exec i3-navigate-emacs left
-# bindsym Mod4+$down  exec i3-navigate-emacs down
-# bindsym Mod4+$up exec i3-navigate-emacs up
-# bindsym Mod4+$right exec i3-navigate-emacs right
+# bindsym Mod4+$left focus left
+# bindsym Mod4+$down focus down
+# bindsym Mod4+$up focus up
+# bindsym Mod4+$right focus right
+bindsym Mod4+$left exec ~/bin/i3-navigate-emacs left
+bindsym Mod4+$down  exec ~/bin/i3-navigate-emacs down
+bindsym Mod4+$up exec ~/bin/i3-navigate-emacs up
+bindsym Mod4+$right exec ~/bin/i3-navigate-emacs right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Left focus left
@@ -229,10 +229,6 @@ bindsym Mod4+Control+Shift+9 move container to workspace number $ws9
 bindsym Mod4+Control+Shift+0 move container to workspace number $ws10
 
 
-# setup i3-layouts
-set $i3l autosplit to workspace $ws1
-set $i3l autosplit to workspace $ws4
-
 
 # reload the configuration file
 bindsym Mod4+Shift+c reload
@@ -319,11 +315,6 @@ focus_follows_mouse no
 focus_wrapping no
 workspace_auto_back_and_forth yes
 
-# Press $mod+o followed by either f, t, Escape or Return to launch firefox,
-# thunderbird or return to the default mode, respectively.
-set $mode_launcher Launch: [f]irefox [t]hunderbird [r]studio
-#bindsym Mod4+o mode "$mode_launcher"
-
 
 # Focused and Script modes
 set $mode_scripts Run: [1]monitor [3]monitor [2]class-monitors [c]apslock set[w]acom get[e]xchange
@@ -333,7 +324,7 @@ mode "$mode_scripts" {
     bindsym 2 exec ~/bin/class_monitors.sh; mode "default"
     bindsym c exec ~/bin/capslock.sh; mode "default"
     bindsym w exec ~/bin/setwacom.sh; mode "default"
-    bindsym e exec ~/bin/get_exchange_call.sh; mode "default"
+    bindsym e exec ~/bin/get_exchange_cal.sh; mode "default"
 
     # Exit to the default mode
     bindsym Escape mode "default"
@@ -351,31 +342,29 @@ mode "$dired" {
 
 
 # bindsym Mod4+p exec quickswitch_launcher
-
-
-bindsym Mod4+g exec emacs-focus.sh
+bindsym Mod4+g exec ~/bin/emacs-focus.sh
 
 # Enter focused mode
 bindsym Mod4+Tab mode "focused"
-for_window [title="^doom-capture$"] floating enable, border pixel 0, resize set 900, move position center
+#for_window [title="^doom-capture$"] floating enable, border pixel 0, resize set 900, move position center
 
 
 
 mode "focused" {
 
     # hardcoded focus keybindings
-    #bindsym f exec runorraise.sh firefox Firefox; mode "default"
-    bindsym x exec runorraise.sh terminal terminal; mode "default"
+    #bindsym f exec ~/bin/runorraise.sh firefox Firefox; mode "default"
+    bindsym x exec ~/bin/runorraise.sh terminal terminal; mode "default"
     # I really like this plugin launcher provided by ohmyzsh for emacs
-    #bindsym e exec runorraise.sh ~/.oh-my-zsh/plugins/emacs/emacsclient.sh Emacs \emacs; mode "default"
-    #bindsym e exec runorraise.sh emacs Emacs "emacsclient -c"; mode "default"
-    bindsym e exec emacs-focus.sh; mode "default"
+    #bindsym e exec ~/bin/runorraise.sh ~/.oh-my-zsh/plugins/emacs/emacsclient.sh Emacs \emacs; mode "default"
+    #bindsym e exec ~/bin/runorraise.sh emacs Emacs "emacsclient -c"; mode "default"
+    bindsym e exec ~/bin/emacs-focus.sh; mode "default"
     bindsym Shift+e exec emacsclient -c; mode "default"
-    bindsym t exec runorraise.sh thunderbird Thunderbird; mode "default"
-    bindsym q exec runorraise.sh qutebrowser qutebrowser; mode "default"
+    # bindsym t exec ~/bin/runorraise.sh thunderbird Thunderbird; mode "default"
+    bindsym q exec ~/bin/runorraise.sh qutebrowser qutebrowser; mode "default"
     bindsym Shift+q exec qutebrowser; mode "default"
-    bindsym z exec runorraise.sh slack Slack; mode "default"
-    bindsym b exec runorraise.sh bitwarden Bitwarden; mode "default"
+    bindsym z exec ~/bin/runorraise.sh slack Slack; mode "default"
+    bindsym b exec ~/bin/runorraise.sh bitwarden Bitwarden; mode "default"
     bindsym Shift+m exec "emacsclient -ce '(mu4e)' -a ''" ; mode "default"
     bindsym Shift+d exec "emacsclient -ce '(jds/quoteless-day-agenda)' -a ''" ; mode "default"
     bindsym Shift+x exec "emacsclient -e '(+org-capture/open-frame)' -a ''" ; mode "default"

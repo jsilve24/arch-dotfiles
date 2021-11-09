@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 cmd="$1"
 class="$2"

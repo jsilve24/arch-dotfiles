@@ -46,7 +46,7 @@ settings:
     - --file
     - '{file}'
   fileselect.handler:
-    global: external
+    global: default
   url.default_page:
     global: https://google.com
   url.searchengines:

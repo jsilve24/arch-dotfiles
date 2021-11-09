@@ -119,18 +119,18 @@ eval "$(zoxide init zsh)"
 
 
 # Aliases
-alias rr=ranger
-alias rd="ranger ~/Downloads/"
-alias bat=batcat
+# alias rr=ranger
+# alias rd="ranger ~/Downloads/"
+# alias bat=batcat
 alias e='emacsclient -a ""'
 alias et="emacsclient -a '' -nw"
 alias m='emacsclient --eval "(progn (magit-status) (delete-other-windows))" -a ""'
 alias mt="m -nw"
 alias se="systemctl --user start emacs.service"
 alias fuck.emacs="pkill -SIGUSR2 emacs"
-alias install-deb="sudo dpkg -i"
+# alias install-deb="sudo dpkg -i"
 alias fuck.log="vim /var/log/syslog"
-alias sense="watch -n 2 sensors"
+# alias sense="watch -n 2 sensors"
 alias R="R --no-save"
 
 
