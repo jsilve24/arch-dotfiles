@@ -28,6 +28,8 @@ settings:
   content.blocking.whitelist:
     global:
     - https://speedtesting.herokuapp.com/*
+  content.desktop_capture:
+    https://meet.google.com: true
   content.media.audio_capture:
     https://dukemed.webex.com: true
     https://teams.microsoft.com: true
