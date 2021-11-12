@@ -2,6 +2,7 @@
 
 # customize these
 WGET=/usr/bin/wget
+# ICS2ORG=~/.local/bin/ical2orgpy
 ICS2ORG=~/bin/ical2org.awk
 ICSFILE=~/.cache/ical2org/psu_cal.ics
 ORGFILE=~/Dropbox/org/exclude-beorg/cal-psu.org
@@ -15,3 +16,5 @@ mkdir -p /home/jds6696/.cache/ical2org/
 
 $WGET -O $ICSFILE $URL
 $ICS2ORG < $ICSFILE > $ORGFILE
+# $ICS2ORG $ICSFILE $ORGFILE
+# rm -f $ICSFILE

@@ -135,9 +135,9 @@ alias et="emacsclient -a '' -nw"
 alias m='emacsclient --eval "(progn (magit-status) (delete-other-windows))" -a ""'
 alias mt="m -nw"
 alias se="systemctl --user start emacs.service"
+alias ke="systemctl --user stop emacs.service"
 alias fuck.emacs="pkill -SIGUSR2 emacs"
-# alias install-deb="sudo dpkg -i"
-alias fuck.log="vim /var/log/syslog"
+alias FUCK.emacs="pkill -9 emacs"
 # alias sense="watch -n 2 sensors"
 alias R="R --no-save"
 
