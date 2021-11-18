@@ -1,4 +1,8 @@
-setxkbmap -option caps:escape
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape' -t 200
+
+# old 
+# setxkbmap -option caps:escape
 
 # # make CapsLock behave like Ctrl:
 # setxkbmap -option ctrl:nocaps

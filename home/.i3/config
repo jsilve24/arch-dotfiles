@@ -80,7 +80,7 @@ floating_modifier Mod4
 
 # start a terminal
 #bindsym Mod4+Return exec i3-sensible-terminal
-bindsym Mod4+Return exec "emacsclient -ce '(vterm)'"
+bindsym Mod4+Return exec "emacsclient -ce '(multi-vterm)'"
 
 # Have file manager right at hand
 bindsym Mod4+Shift+Return exec "emacsclient -ce '(deer)'"
@@ -363,13 +363,15 @@ mode "focused" {
     # bindsym t exec ~/bin/runorraise.sh thunderbird Thunderbird; mode "default"
     bindsym q exec ~/bin/runorraise.sh qutebrowser qutebrowser; mode "default"
     bindsym Shift+q exec qutebrowser; mode "default"
-    bindsym z exec ~/bin/runorraise.sh slack Slack; mode "default"
+    bindsym y exec ~/bin/runorraise.sh slack Slack; mode "default"
     bindsym b exec ~/bin/runorraise.sh bitwarden Bitwarden; mode "default"
     bindsym Shift+m exec "emacsclient -ce '(mu4e)' -a ''" ; mode "default"
     bindsym Shift+d exec "emacsclient -ce '(jds/quoteless-day-agenda)' -a ''" ; mode "default"
-    bindsym Shift+x exec "emacsclient -e '(+org-capture/open-frame)' -a ''" ; mode "default"
+    # bindsym Shift+x exec "emacsclient -e '(+org-capture/open-frame)' -a ''" ; mode "default"
     bindsym Return exec alacritty; mode "default"
     bindsym f mode "$dired"
+    bindsym a exec "emacsclient -ce '(affe-find)'"; mode "default"
+    bindsym z exec "emacsclient -ce '(zoxide-find-file)'"; mode "default"
 
 
     # keybindings for marking and jumping to clients

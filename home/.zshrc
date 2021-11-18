@@ -87,6 +87,8 @@ plugins=(git
 #ctrl-space accepts suggestion
 bindkey '^ ' autosuggest-accept
 
+# bindkey '^[^M' fuck-command-line
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
