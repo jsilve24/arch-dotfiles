@@ -14,7 +14,7 @@ text/csv=emacs.desktop;
 
 [Default Applications]
 image/svg+xml=inkscape.desktop
-text/plain=emacs.desktop
+text/plain=emacs-client.desktop
 inode/director=emacs-client.desktop
 inode/directory=emacs-client.desktop
 x-scheme-handler/rdp=org.remmina.Remmina.desktop
