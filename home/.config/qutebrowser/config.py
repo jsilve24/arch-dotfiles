@@ -1,6 +1,13 @@
 # Load existing settings made via :set
 config.load_autoconfig()
 
+### Key Bindings
+
+config.bind("ga", 'spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ace-window \'global))"')
+
+### Theme
+
+
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
 # Base16 qutebrowser template by theova
 # Solarized Dark scheme by Ethan Schoonover (modified by aramisgithub)

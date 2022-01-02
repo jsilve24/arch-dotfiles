@@ -19,10 +19,6 @@ settings:
         <Alt+o>: set-cmd-text -s :open -w
         '[[': tab-prev
         ']]': tab-next
-        gj: jseval (function()%7Bvar libproxy%3D"ezaccess.libraries.psu.edu"%3Bvar
-          pn%3Dwindow.location.pathname%2C hn%3Dwindow.location.hostname%3Bif(hn.indexOf(libproxy)
-          %3D%3D -1) %7Bif(pn%3D%3D%3Dundefined %7C%7C pn%3D%3D"%2F" %7C%7C pn%3D%3D"")%7Balert(libproxy%2B"can't
-          handle root urls")%3B%7Delse%7Bwindow.location.href%3D("http%3A%2F%2F"%2Bhn%2B"."%2Blibproxy%2Bpn)%3B%7D%7D%7D)()
   colors.webpage.darkmode.enabled:
     global: false
   content.blocking.whitelist:
@@ -42,6 +38,8 @@ settings:
     https://teams.microsoft.com: true
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
+  downloads.prevent_mixed_content:
+    global: false
   editor.command:
     global:
     - emacs
