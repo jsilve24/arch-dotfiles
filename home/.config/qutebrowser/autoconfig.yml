@@ -19,6 +19,8 @@ settings:
         <Alt+o>: set-cmd-text -s :open -w
         '[[': tab-prev
         ']]': tab-next
+        ga: spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ac
+          in Parkinson’s disease.e-window 'global))"
   colors.webpage.darkmode.enabled:
     global: false
   content.blocking.whitelist:
@@ -42,8 +44,9 @@ settings:
     global: false
   editor.command:
     global:
-    - emacs
-    - --file
+    - emacsclient
+    - -c
+    - +{line}:{column}
     - '{file}'
   fileselect.handler:
     global: default
