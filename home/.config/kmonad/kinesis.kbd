@@ -55,14 +55,14 @@
   caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12  prnt slck pause
 
   =      1    2    3    4    5                   6    7    8    9    0    -
-  @tab   q    w    e    r    t                   y    u    i    o    p    \
-  @esc   a    s    d    f    g                   h    j    k    l    ;    '
+  tab   q    w    e    r    t                   y    u    i    o    p    \
+  @esc   @a   s    d    @f   g                   h    j    k    l    @;   '
   @lsft  z    x    c    v    b                   n    m    ,    .    / @rsft
         grv   ins  left rght                          down up   [    ]
 
                            lctl lalt   ralt rctl
-                     @bspc rmet home   pgup @ret spc
-                                 end   pgdn
+                     @bspc rmet [      pgup ret @spc
+                                ]      pgdn
 )
 
 
@@ -91,6 +91,10 @@
   bspc (tap-hold-next 200 bspc lalt)
   ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
+  ; (tap-hold 200 ; rsft)
+  a (tap-hold 200 a lsft)
+  f (tap-hold 200 f (layer-toggle navigation))
+  spc (tap-hold 200 spc lsft)
 
   ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght
