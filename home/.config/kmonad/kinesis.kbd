@@ -58,11 +58,11 @@
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   s    d    @f   g                   h    j    k    l    @;   '
   @lsym  z    x    c    v    b                   n    m    ,    .    / @rsym
-        grv   ins  left rght                          down up   [    ]
+        grv   XX   XX   XX                            XX   XX   [    ]
 
-                           lctl lalt   ralt rctl
-                     @bspc rmet [      pgup ret @spc
-                                ]      pgdn
+                           lctl XX     XX   rctl
+                     @bspc rmet XX     \    ret @spc
+                                XX     XX
 )
 
 
@@ -85,7 +85,7 @@
 
   _    _    _    _    _    _                    _    _    _    _    _    _
   _    _    _    _    _    _                    _    _    _    _    _    _
-  _    [    {    =    +    _                    _    \_   -    }    ]    _
+  _    [    {    ^    =    +                    -   \_    $    }    ]    _
   _    _    _    _    _    _                    _    _    <    >    ?    _
        _    _    _    _                              _    _    _    _
 
@@ -106,8 +106,8 @@ Alias					;
   bspc (tap-hold-next 200 bspc lalt)
   ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
-  ; (tap-hold 200 ; rsft)
-  a (tap-hold 200 a lsft)
+  ; (tap-hold 150 ; rsft)
+  a (tap-hold 150 a lsft)
   f (tap-hold 200 f (layer-toggle navigation))
   spc (tap-hold 200 spc lsft)
 
