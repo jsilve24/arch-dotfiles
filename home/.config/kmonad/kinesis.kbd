@@ -55,9 +55,9 @@
   caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12  prnt slck pause
 
   =      1    2    3    4    5                   6    7    8    9    0    -
-  tab   q    w    e    r    t                   y    u    i    o    p    \
+  tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   s    d    @f   g                   h    j    k    l    @;   '
-  @lsft  z    x    c    v    b                   n    m    ,    .    / @rsft
+  @lsym  z    x    c    v    b                   n    m    ,    .    / @rsym
         grv   ins  left rght                          down up   [    ]
 
                            lctl lalt   ralt rctl
@@ -70,24 +70,39 @@
   _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _
 
   _    _    _    _    _    _                    _    _    _    _    _    _
-  _    _    _    @↑   pgup pgdn                 pgup pgdn @↑   _    _    _
-  _    home @←   @↓   @→   end                  home @←   @↓   @→   end  _
-  _    _    lalt tab  lctl pgdn                 pgdn rctl tab  ralt _    _
+  _    _    _    _    _    _                    _    pgdn pgup _    _    _
+  _    _    _    _    _    _                    @←   @↓   @↑   @→   _    _
+  _    _    _    _    _    _                    _    _    _    _    _    _
        _    _    _    _                              _    _    _    _
 
-                          del   _       _    del
-                   bspc  lsft   _       _    rsft  bspc
+                          _     _       _    _  
+                   _      _     _       _    _     _   
                                 _       _
 )
 
+(deflayer sym
+  _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _
+
+  _    _    _    _    _    _                    _    _    _    _    _    _
+  _    _    _    _    _    _                    _    _    _    _    _    _
+  _    [    {    =    +    _                    _    \_   -    }    ]    _
+  _    _    _    _    _    _                    _    _    <    >    ?    _
+       _    _    _    _                              _    _    _    _
+
+                          _     _       _    _  
+                   _      _     _       _    _     _   
+                                _       _
+)
+
+
 #| --------------------------------------------------------------------------
-                                      Alias
-  -------------------------------------------------------------------------- |#
+Alias					;
+-------------------------------------------------------------------------- |#
 
 (defalias
   esc (tap-hold-next 200 esc lctl)
-  lsft (tap-hold-next 200 \( lsft)
-  rsft (tap-hold-next 200 \) rsft)
+  lsym (tap-hold-next 200 \( (layer-toggle sym))
+  rsym (tap-hold-next 200 \) (layer-toggle sym))
   bspc (tap-hold-next 200 bspc lalt)
   ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
@@ -98,7 +113,7 @@
 
   ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght
-)
+  )
 
 
 #| -------------------------------------------------------------------------
