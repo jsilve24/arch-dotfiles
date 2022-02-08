@@ -65,8 +65,8 @@
   a (tap-hold 200 a lsft)
   ; (tap-hold 200 ; rsft)
   esc (tap-hold-next 200 esc lctl)
-  lsft (tap-hold-next 200 \( lsft)
-  rsft (tap-hold-next 200 \) rsft)
+  lsft (tap-hold-next 200 \( (layer-toggle sym))
+  rsft (tap-hold-next 200 \) (layer-toggle sym))
   f (tap-hold 200 f (layer-toggle navigation))
 
 ;; Fancy names for arrows
