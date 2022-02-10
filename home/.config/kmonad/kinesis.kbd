@@ -73,12 +73,12 @@
   _    _    _    _    _    _                    _    pgdn pgup _    _    _
   _    _    _    _    _    _                    @←   @↓   @↑   @→   _    _
   _    _    _    _    _    _                    _    _    _    _    _    _
-       _    _    _    _                              _    _    _    _
+  _    _    _    _                              _    _    _    _
 
-                          _     _       _    _  
-                   _      _     _       _    _     _   
-                                _       _
-)
+                            _     _       _    _  
+                     _      _     _       _    _     _   
+                                  _       _
+  )
 
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _
@@ -107,8 +107,8 @@ Alias					;
   bspc (tap-hold-next 200 bspc lalt)
   ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
-  ; (tap-hold 150 ; rsft)
-  a (tap-hold 150 a lsft)
+  ; (tap-hold 150 ; lsft)
+  a (tap-hold 150 a rsft)
   f (tap-hold 200 f (layer-toggle navigation))
   spc (tap-hold 200 spc lsft)
 
