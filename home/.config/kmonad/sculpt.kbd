@@ -39,14 +39,34 @@
      lctl   lmet lalt           spc           rsft  menu  rctl         left down  right
 )
 
+(deflayer rshift
+  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc  del  home
+  tab       Q    W    E    R    T    Y    U    I    O    P    _    _    \          end
+  @esc      A    @S   @D   @F   @G   H    J    K    L    _    "    _               pgup
+  @lsft     Z    X    C    V    B    N    M    ,    .    /    @rsft          up    pgdn      
+     lctl   lmet lalt           spc           rsft  menu  rctl         left down  right
+)
+
+
+(deflayer lshift
+  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc  del  home
+  tab       Q    W    E    R    T    Y    U    I    O    P    _    _    \          end
+  @esc      _    @S   @D   @F   @G   H    J    K    L    :    "    _               pgup
+  @lsft     Z    X    C    V    B    N    M    ,    .    /    @rsft          up    pgdn      
+     lctl   lmet lalt           spc           rsft  menu  rctl         left down  right
+)
+
+
 (deflayer num
   _         _    _    _    _    _    _    _    _    _    _    _    _          
   _         _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
   _         _    _    _    _    _    _    1    2    3    _    _    _    _          _  
   _         _    _    _    _    _    _    4    5    6    _    _    _               _    
   _         _    _    _    _    _    _    7    8    9    _    _              _     _          
-     _      _    _              0              _    _    _              _    _     _    
-)
+  _      _    _              0              _    _    _              _    _     _    
+  )
 
 (deflayer sym
   _         _    _    _    _    _    _    _    _    _    _    _    _          
@@ -80,8 +100,8 @@
 
 
 (defalias
-  a (tap-hold 200 a lsft)
-  ; (tap-hold 150 ; rsft)
+  a (tap-hold 175 a (layer-toggle lshift))
+  ; (tap-hold 150 ; (layer-toggle rshift))
   esc (tap-hold-next 200 esc lctl)
   lsft (tap-hold-next 200 \( (layer-toggle sym))
   rsft (tap-hold-next 200 \) (layer-toggle sym))
@@ -89,6 +109,10 @@
   s (tap-hold 200 s (layer-toggle sym))
   d (tap-hold 200 d (layer-toggle delim))
   g (tap-hold 200 g (layer-toggle num))
+  F (tap-hold 200 F (around lsft (layer-toggle navigation)))
+  S (tap-hold 200 S (layer-toggle sym))
+  D (tap-hold 200 D (layer-toggle delim))
+  G (tap-hold 200 G (layer-toggle num))
 
 ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght)
