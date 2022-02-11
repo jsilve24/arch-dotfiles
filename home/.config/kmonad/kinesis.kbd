@@ -56,7 +56,7 @@
 
   =      1    2    3    4    5                   6    7    8    9    0    -
   tab    q    w    e    r    t                   y    u    i    o    p    \
-  @esc   @a   s    d    @f   g                   h    j    k    l    @;   '
+  @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
   @lsym  z    x    c    v    b                   n    m    ,    .    / @rsym
         grv   XX   XX   XX                            XX   XX   [    ]
 
@@ -67,32 +67,90 @@
 
 
 (deflayer navigation
-  _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
 
-  _    _    _    _    _    _                    _    _    _    _    _    _
-  _    _    _    _    _    _                    _    pgdn pgup _    _    _
-  _    _    _    _    _    _                    @←   @↓   @↑   @→   _    _
-  _    _    _    _    _    _                    _    _    _    _    _    _
-  _    _    _    _                              _    _    _    _
+  XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   pgdn pgup XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   @←   @↓   @↑   @→   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX                             XX   XX   XX   XX
 
-                            _     _       _    _  
-                     _      _     _       _    _     _   
-                                  _       _
+                            XX    XX      XX   XX 
+                     XX     XX    XX      XX   XX    XX  
+                                  XX      XX
   )
 
 (deflayer sym
-  _    _    _    _    _    _    _    _    _    _     _    _    _    _    _    _
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   !    @    #    XX   XX
+  XX   XX   XX   XX   XX   XX                   `    ^    %    $    XX   XX
+  XX   XX   XX   XX   XX   XX                   ~    &    *    XX   XX   XX
+       XX   XX   XX   XX                             XX   XX   XX   XX
 
-  _    _    _    _    _    _                    _    _    _    _    _    _
-  _    _    _    `    ~    _                    _    {    }    <    >    _
-  _    &    *    ^    $    #                    +    [    ]    -    \_   _
-  
-  _    _    _    _    _    _                    =    \(   \)   _    _    _
-       _    _    _    _                              _    _    _    _
+                          XX    XX      XX   XX 
+                   XX     XX    XX      XX   XX    XX  
+                                XX      XX
+)
 
-                          _     _       _    _  
-                   _      _     _       _    _     _   
-                                _       _
+
+(deflayer delim
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   -    {    }    XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   +    [    ]    \_   XX   XX
+  XX   XX   XX   XX   XX   XX                   =    &    *    XX   XX   XX
+       XX   XX   XX   XX                             XX   XX   XX   XX
+
+                          XX    XX      XX   XX 
+                   XX     XX    XX      XX   XX    XX  
+                                XX      XX
+)
+
+(deflayer num
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   -    1    2    3    XX   XX
+  XX   XX   XX   XX   XX   XX                   +    4    5    6    XX   XX
+  XX   XX   XX   XX   XX   XX                   =    7    8    9    XX   XX
+       XX   XX   XX   XX                             XX   XX   XX   XX
+
+                          XX    XX      XX   XX 
+                   XX     XX    XX      XX   XX    0   
+                                XX      XX
+)
+
+
+
+(deflayer lshift
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX    XX   XX   XX   XX
+
+  +      !    @    #    $    %                   ^    &    *    \(   \)   \_
+  @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
+  @Esc   _    @S   @D   @F   @G                  H    J    K    L    :    "
+  @Lsym  Z    X    C    V    B                   N    M    <    >    ?  @Rsym
+        ~     XX   XX   XX                            XX   XX   {    }
+
+                           @Lctl XX     XX   @Rctl
+                     @Bspc @Rmet XX     |    @Ret @Spc
+                                 XX     XX
+
+)
+
+
+(deflayer rshift
+  XX    XX   XX   XX   XX   XX   XX   XX   XX   XX   XX  XX    XX   XX   XX   XX
+
+  +      !    @    #    $    %                   ^    &    *    \(   \)   \_
+  @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
+  @Esc   A    @S   @D   @F   @G                  H    J    K    L    _    "
+  @Lsym  Z    X    C    V    B                   N    M    <    >    ?  @Rsym
+        ~     XX   XX   XX                            XX   XX   {    }
+
+                           @Lctl XX     XX   @Rctl
+                     @Bspc @Rmet XX     |    @Ret @Spc
+                                 XX     XX
+
 )
 
 
@@ -107,14 +165,36 @@ Alias					;
   bspc (tap-hold-next 200 bspc lalt)
   ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
-  ; (tap-hold 150 ; lsft)
-  a (tap-hold 150 a rsft)
+  a (tap-hold 150 a (layer-toggle lshift))
+  ; (tap-hold 150 ; (layer-toggle rshift))
   f (tap-hold 200 f (layer-toggle navigation))
+  s (tap-hold 200 s (layer-toggle sym))
+  d (tap-hold 200 d (layer-toggle delim))
+  g (tap-hold 200 g (layer-toggle num))
   spc (tap-hold 200 spc lsft)
+  
+
+  ;; shift layer
+  F (tap-hold 200 F (around lsft (layer-toggle navigation)))
+  S (tap-hold 200 S (layer-toggle sym))
+  D (tap-hold 200 D (around lsft (layer-toggle delim)))
+  G (tap-hold 200 G (layer-toggle num))
+  Tab  (around lsft tab)
+  Esc  (around lsft @esc)
+  Rmet (around lsft rmet)
+  Lctl (around lsft lctl)
+  Rctl (around lsft rctl)
+  Lalt (around lsft lalt)
+  Spc  (around lsft @spc)
+  Lsft (around lsft \))
+  Rsft (around lsft \()
+  Ret  (around lsft @ret)
+  Bspc (around lsft @bspc)
+  Lsym (around lsft @lsym)
+  Rsym (around lsft @rsym)
 
   ;; Fancy names for arrows
-  ↑ up  ↓ down  ← left  → rght
-  )
+  ↑ up  ↓ down  ← left  → rght)
 
 
 #| -------------------------------------------------------------------------

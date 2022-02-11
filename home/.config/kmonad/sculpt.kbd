@@ -102,13 +102,13 @@
 
 
 (defalias
-  a (tap-hold 150 a (layer-toggle lshift))
-  ; (tap-hold 150 ; (layer-toggle rshift))
+  a (tap-hold 175 a (layer-toggle lshift))
+  ; (tap-hold 175 ; (layer-toggle rshift))
   esc (tap-hold-next 200 esc lctl)
   lsft (tap-hold-next 200 \( (layer-toggle sym))
   rsft (tap-hold-next 200 \) (layer-toggle sym))
   f (tap-hold 200 f (layer-toggle navigation))
-  s (tap-hold 200 s (layer-toggle sym))
+  s (tap-hold 200 s (layer-toggle sym)
   d (tap-hold 200 d (layer-toggle delim))
   g (tap-hold 200 g (layer-toggle num))
 
