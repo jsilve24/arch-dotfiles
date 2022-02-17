@@ -1,5 +1,5 @@
 [Added Associations]
-text/plain=emacs.desktop;
+text/plain=emacs-client.desktop;
 image/svg+xml=inkscape.desktop;
 x-scheme-handler/rdp=org.remmina.Remmina.desktop;
 x-scheme-handler/spice=org.remmina.Remmina.desktop;
@@ -10,7 +10,7 @@ x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop;
 text/html=org.qutebrowser.qutebrowser.desktop;
 application/xhtml+xml=org.qutebrowser.qutebrowser.desktop;
 x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop;
-text/csv=emacs.desktop;
+text/csv=emacs-client.desktop;
 
 [Default Applications]
 image/svg+xml=inkscape.desktop

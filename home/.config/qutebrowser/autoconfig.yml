@@ -19,8 +19,8 @@ settings:
         <Alt+o>: set-cmd-text -s :open -w
         '[[': tab-prev
         ']]': tab-next
-        ga: spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ac
-          in Parkinson’s disease.e-window 'global))"
+        ga: spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ace-window
+          'global))"
   colors.webpage.darkmode.enabled:
     global: false
   content.blocking.whitelist:
@@ -50,6 +50,10 @@ settings:
     - '{file}'
   fileselect.handler:
     global: default
+  qt.force_software_rendering:
+    global: software-opengl
+  qt.workarounds.remove_service_workers:
+    global: true
   url.default_page:
     global: https://google.com
   url.searchengines:
