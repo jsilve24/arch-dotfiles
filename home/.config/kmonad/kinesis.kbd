@@ -71,14 +71,13 @@
 
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX   XX   XX                   XX   pgdn pgup XX   XX   XX
-  _    _    XX   XX   XX   XX                   @←   @↓   @↑   @→   _    XX
+  _    lsft XX   XX   XX   XX                   @←   @↓   @↑   @→   rsft XX
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX                             XX   XX   XX   XX
 
                              _    _       _    _
                      _       _    _       _    _     _ 
-                                  _       _ 
-  )
+                     _       _)
 
 (deflayer sym
   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX   XX
