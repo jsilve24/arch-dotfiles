@@ -43,7 +43,7 @@
   esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
-  @esc      _   @S   @D   @F   @G    H    J    K    L    :    "    S-ret
+  @Esc      _   @S   @D   @F   @G    H    J    K    L    :    "    S-ret
   {         Z    X    C    V    B    N    M    <    >    ?     }             XX      S-up      XX  
      S-lctl S-lmet S-lalt         S-spc            S-ralt S-rmet XX  S-rctl  S-left  S-down    S-right
 )
@@ -52,7 +52,7 @@
   esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
-  @esc      A   @S   @D   @F   @G    H    J    K    L    _    "    S-ret
+  @Esc      A   @S   @D   @F   @G    H    J    K    L    _    "    S-ret
   {         Z    X    C    V    B    N    M    <    >    ?     }             XX      S-up      XX  
      S-lctl S-lmet S-lalt         S-spc            S-ralt S-rmet XX  S-rctl  S-left  S-down    S-right
 )
@@ -110,6 +110,7 @@
   S (tap-hold 165 S (layer-toggle sym))
   G (tap-hold 165 G (around lsft (layer-toggle delim)))
   D (tap-hold 165 D (layer-toggle num))
+  Esc  (around lsft @esc)
 
   ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght)
