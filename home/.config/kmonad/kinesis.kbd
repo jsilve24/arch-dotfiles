@@ -61,7 +61,7 @@
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
          @grv _    XX   XX                            @wS  @wV  @w=  @wqute
 
-                           @Cc   @Cx    XX   XX
+                           @Cu   XX     XX   XX
                      @bspc @rmet @aw    XX   ret @spc
                                  @spl   \
 )
@@ -172,6 +172,7 @@ Alias					;
   d (tap-hold 150 d (layer-toggle num))
   spc (tap-hold 200 spc lctl)
   rmet (tap-hold 165 C-bspc rmet)
+  Cu (tap-hold 165 C-u rctl)
   Cc (tap-hold 165 C-c rctl)
   Cx (tap-hold 165 C-x rctl)
   grv (tap-macro spc grv)

@@ -36,7 +36,7 @@
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
   @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    '    ret
   \(        z    x    c    v    b    n    m    ,    .    /       \)         XX      up      XX  
-     lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
+     lctl   lmet @lalt          spc            ralt rmet prnt   rctl        left    down    right
 )
 
 (deflayer lshift
@@ -104,6 +104,7 @@
   s (tap-hold 165 s (layer-toggle sym))
   g (tap-hold 165 g (layer-toggle delim))
   d (tap-hold 150 d (layer-toggle num))
+  lalt (tap-hold 165 bspc lalt)
 
   ;; shift layers
   F (tap-hold 165 F (around lsft (layer-toggle navigation)))
