@@ -59,7 +59,7 @@
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
-        grv   XX   XX   XX                            @wS  @wV  @w=  @wqute
+         @grv XX   XX   XX                            @wS  @wV  @w=  @wqute
 
                            @Cc   @Cx    XX   XX
                      @bspc @rmet @aw    XX   ret @spc
@@ -130,7 +130,7 @@
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
   @Esc   _    @S   @D   @F   @G                  H    J    K    L    :    "
   {      Z    X    C    V    B                   N    M    <    >    ?    }
-        ~     XX   XX   XX                            XX   XX   XX   @wqute
+        @Grv  XX   XX   XX                            XX   XX   XX   @wqute
 
                            _     _      _    _
                      @Bspc @Rmet _      _    @Ret @Spc
@@ -146,7 +146,7 @@
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
   @Esc   A    @S   @D   @F   @G                  H    J    K    L    _    "
   {      Z    X    C    V    B                   N    M    <    >    ?    }
-        ~     XX   XX   XX                            XX   XX   XX   @wQute
+         @Grv XX   XX   XX                            XX   XX   XX   @wQute
 
                            _     _      _    _
                      @Bspc @Rmet _      _    @Ret @Spc
@@ -174,6 +174,7 @@ Alias					;
   rmet (tap-hold 165 C-bspc rmet)
   Cc (tap-hold 165 C-c rctl)
   Cx (tap-hold 165 C-x rctl)
+  grv (tap-macro spc grv)
 
 
   ;; shift layer
@@ -190,6 +191,7 @@ Alias					;
   Rsft (around lsft \()
   Ret  (around lsft @ret)
   Bspc (around lsft @bspc)
+  Grv  (around rmet grv)
 
 
   ;; macros
