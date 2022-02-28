@@ -51,7 +51,7 @@ settings:
   fileselect.handler:
     global: default
   qt.force_software_rendering:
-    global: software-opengl
+    global: chromium
   qt.workarounds.remove_service_workers:
     global: true
   url.default_page:

@@ -2,6 +2,7 @@
 
     @see https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
     @see https://github.com/shofel/dotfiles/blob/e40fc87d664f61633e8ce55082fc96bcd878041a/home-nix/kmonad/kinesis_130P.kbd
+    @see https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs for list of keycodes
 
   -------------------------------------------------------------------------- |#
 
@@ -60,8 +61,8 @@
   @lsym  z    x    c    v    b                   n    m    ,    .    / @rsym
         grv   XX   XX   XX                            @wS  @wV  @w=  @wqute
 
-                           lctl  XX     XX   rctl
-                     @bspc @rmet XX     XX   ret @spc
+                           @Cc   @Cx   XX   rctl
+                     @bspc @rmet @aw    XX   ret @spc
                                  @spl   \
 )
 
@@ -130,7 +131,7 @@
   @Lsym  Z    X    C    V    B                   N    M    <    >    ?  @Rsym
         ~     XX   XX   XX                            XX   XX   {    }
 
-                           @Lctl _      _    @Rctl
+                           _     _      _    @Rctl
                      @Bspc @Rmet _      _    @Ret @Spc
                                  _      | 
 
@@ -146,7 +147,7 @@
   @Lsym  Z    X    C    V    B                   N    M    <    >    ?  @Rsym
         ~     XX   XX   XX                            XX   XX   {    }
 
-                           @Lctl _      _    @Rctl
+                           _     _      _    @Rctl
                      @Bspc @Rmet _      _    @Ret @Spc
                                  _      | 
 
@@ -172,6 +173,9 @@ Alias					;
   d (tap-hold 150 d (layer-toggle num))
   spc (tap-hold 200 spc lctl)
   rmet (tap-hold 165 C-bspc rmet)
+  Cc (tap-hold 165 C-c rctl)
+  Cx (tap-hold 165 C-x rctl)
+
 
   ;; shift layer
   F (tap-hold 175 F (around lsft (layer-toggle navigation)))
@@ -181,7 +185,7 @@ Alias					;
   Tab  (around lsft tab)
   Esc  (around lsft @esc)
   Rmet (around lsft rmet)
-  Lctl (around lsft lctl)
+  ;; Lctl (around lsft lctl)
   Rctl (around lsft rctl)
   Lalt (around lsft lalt)
   Spc  (around lsft @spc)
@@ -199,6 +203,8 @@ Alias					;
   w= (tap-macro M-=)
   wqute (tap-macro M-tab P100 Q)
   spl A-tab
+  aw  (around rmet spc)
+
   
   ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght)
