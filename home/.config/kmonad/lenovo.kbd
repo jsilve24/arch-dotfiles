@@ -34,20 +34,82 @@
   esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12      home    end    ins  del
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc      
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
-  @esc      a   s     d     f   g    h    j    k    l    ;    '    ret
-  @lsft     z    x    c    v    b    n    m    ,    .    /     @rsft        XX      up      XX  
+  @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    '    ret
+  \(        z    x    c    v    b    n    m    ,    .    /       \)         XX      up      XX  
      lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
 )
 
+(deflayer lshift
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
+  ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
+  S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
+  @esc      _   @S   @D   @F   @G    H    J    K    L    :    "    S-ret
+  {         Z    X    C    V    B    N    M    <    >    ?     }             XX      S-up      XX  
+     S-lctl S-lmet S-lalt         S-spc            S-ralt S-rmet XX  S-rctl  S-left  S-down    S-right
+)
 
- 
+(deflayer rshift
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
+  ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
+  S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
+  @esc      A   @S   @D   @F   @G    H    J    K    L    _    "    S-ret
+  {         Z    X    C    V    B    N    M    <    >    ?     }             XX      S-up      XX  
+     S-lctl S-lmet S-lalt         S-spc            S-ralt S-rmet XX  S-rctl  S-left  S-down    S-right
+)
+
+(deflayer sym
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
+  XX        XX   XX   XX   XX   XX   -    &    *    XX   XX   XX   XX   XX     
+  XX        XX   XX   XX   XX   XX   `    ^    %    $    \_   XX   XX   
+  XX        XX   XX   XX   XX   XX   ~    !    @    #    XX   XX            XX      up      XX  
+     lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
+)
+
+(deflayer delim
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
+  XX        XX   XX   XX   XX   XX   -    {    }    XX   XX   XX   XX   XX     
+  _         XX   XX   XX   XX   XX   +    [    ]    XX   \_   XX   XX   
+  XX        XX   XX   XX   XX   XX   =    \(   \)   #    XX   XX            XX      up      XX  
+     lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
+)
+
+(deflayer num
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
+  XX        XX   XX   XX   XX   XX   -    7    8    9    *    XX   XX   XX     
+  _         XX   XX   XX   XX   XX   +    4    5    6    .    XX   XX   
+  XX        XX   XX   XX   XX   XX   =    1    2    3    /    XX            XX      up      XX  
+     lctl   lmet lalt           0              ralt rmet prnt   rctl        left    down    right
+)
+
+(deflayer navigation
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
+  XX        XX   XX   XX   XX   XX   XX   pgdn pgup XX   XX   XX   XX   XX     
+  _         lsft XX   XX   XX   XX   @←   @↓   @↑   @→   rsft XX   XX   
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX            XX      up      XX  
+     lctl   lmet lalt           0              ralt rmet prnt   rctl        left    down    right
+)
+
 #| aliases -----------------------------------------------------------------------|#
 
 
 (defalias
   esc (tap-hold-next 200 esc lctl)
-  lsft (tap-hold-next 200 \( lsft)
-  rsft (tap-hold-next 200 \) rsft)
+  a (tap-hold 165 a (layer-toggle lshift))
+  ; (tap-hold 165 ; (layer-toggle rshift))
+  f (tap-hold 165 f (layer-toggle navigation))
+  s (tap-hold 165 s (layer-toggle sym))
+  g (tap-hold 165 g (layer-toggle delim))
+  d (tap-hold 150 d (layer-toggle num))
 
-;; Fancy names for arrows
+  ;; shift layers
+  F (tap-hold 165 F (around lsft (layer-toggle navigation)))
+  S (tap-hold 165 S (layer-toggle sym))
+  G (tap-hold 165 G (around lsft (layer-toggle delim)))
+  D (tap-hold 165 D (layer-toggle num))
+
+  ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght)

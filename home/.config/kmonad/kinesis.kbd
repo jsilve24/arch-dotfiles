@@ -58,10 +58,10 @@
   =      1    2    3    4    5                   6    7    8    9    0    -
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
-  @lsym  z    x    c    v    b                   n    m    ,    .    / @rsym
+  \(     z    x    c    v    b                   n    m    ,    .    /  \)
         grv   XX   XX   XX                            @wS  @wV  @w=  @wqute
 
-                           @Cc   @Cx   XX   rctl
+                           @Cc   @Cx    XX   XX
                      @bspc @rmet @aw    XX   ret @spc
                                  @spl   \
 )
@@ -78,7 +78,8 @@
 
                              _    _       _    _
                      _       _    _       _    _     _ 
-                     _       _)
+                                  _       _
+)
 
 (deflayer sym
   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX   XX
@@ -99,7 +100,7 @@
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   _    XX   XX   XX   XX   XX                   -    {    }    XX   XX   XX
   XX   XX   XX   XX   XX   XX                   +    [    ]    XX   \_   XX
-  XX   XX   XX   XX   XX   XX                   =    &    *    XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   =    \(   \)   XX   XX   XX
        XX   XX   XX   XX                             XX   XX   XX   XX
 
                           _     _       _    _  
@@ -128,10 +129,10 @@
   +      !    @    #    $    %                   ^    &    *    \(   \)   \_
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
   @Esc   _    @S   @D   @F   @G                  H    J    K    L    :    "
-  @Lsym  Z    X    C    V    B                   N    M    <    >    ?  @Rsym
-        ~     XX   XX   XX                            XX   XX   {    }
+  {      Z    X    C    V    B                   N    M    <    >    ?    }
+        ~     XX   XX   XX                            XX   XX   XX   @wqute
 
-                           _     _      _    @Rctl
+                           _     _      _    _
                      @Bspc @Rmet _      _    @Ret @Spc
                                  _      | 
 
@@ -144,10 +145,10 @@
   +      !    @    #    $    %                   ^    &    *    \(   \)   \_
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
   @Esc   A    @S   @D   @F   @G                  H    J    K    L    _    "
-  @Lsym  Z    X    C    V    B                   N    M    <    >    ?  @Rsym
-        ~     XX   XX   XX                            XX   XX   {    }
+  {      Z    X    C    V    B                   N    M    <    >    ?    }
+        ~     XX   XX   XX                            XX   XX   XX   @wQute
 
-                           _     _      _    @Rctl
+                           _     _      _    _
                      @Bspc @Rmet _      _    @Ret @Spc
                                  _      | 
 
@@ -160,8 +161,6 @@ Alias					;
 
 (defalias
   esc (tap-hold-next 200 esc lctl)
-  lsym (tap-hold-next 200 \( (layer-toggle sym))
-  rsym (tap-hold-next 200 \) (layer-toggle sym))
   bspc (tap-hold-next 200 bspc lalt)
   ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
@@ -178,30 +177,27 @@ Alias					;
 
 
   ;; shift layer
-  F (tap-hold 175 F (around lsft (layer-toggle navigation)))
-  S (tap-hold 175 S (layer-toggle sym))
-  G (tap-hold 175 G (around lsft (layer-toggle delim)))
-  D (tap-hold 175 D (layer-toggle num))
+  F (tap-hold 165 F (around lsft (layer-toggle navigation)))
+  S (tap-hold 165 S (layer-toggle sym))
+  G (tap-hold 165 G (around lsft (layer-toggle delim)))
+  D (tap-hold 165 D (layer-toggle num))
   Tab  (around lsft tab)
   Esc  (around lsft @esc)
   Rmet (around lsft rmet)
-  ;; Lctl (around lsft lctl)
-  Rctl (around lsft rctl)
   Lalt (around lsft lalt)
   Spc  (around lsft @spc)
   Lsft (around lsft \))
   Rsft (around lsft \()
   Ret  (around lsft @ret)
   Bspc (around lsft @bspc)
-  Lsym (around lsft @lsym)
-  Rsym (around lsft @rsym)
 
 
   ;; macros
   wS (tap-macro M-tab P100 S)
   wV (tap-macro M-tab P100 V)
   w= (tap-macro M-=)
-  wqute (tap-macro M-tab P100 Q)
+  wqute (tap-macro M-tab P100 q)
+  wQute (tap-macro M-tab P100 Q)
   spl A-tab
   aw  (around rmet spc)
 
