@@ -41,7 +41,7 @@
   tab  q    w    e    r    t                   y    u    i    o    p    \
   esc  a    s    d    f    g                   h    j    k    l    ;    '
   lsft z    x    c    v    b                   n    m    ,    .    / rsft
-       grv  ins  left rght                          down up   [    ]
+       grv  F12  left rght                          down up   [    ]
 
                            lctl lalt   rmet rctl
                       bspc del  home   pgup  ret spc
@@ -53,13 +53,13 @@
   -------------------------------------------------------------------------- |#
 
 (deflayer base
-  caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  F12  prnt slck pause
+  caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  XX prnt slck pause
 
   =      1    2    3    4    5                   6    7    8    9    0    -
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
-         @grv XX   XX   XX                            @wS  @wV  @w=  @wqute
+         @grv _    XX   XX                            @wS  @wV  @w=  @wqute
 
                            @Cc   @Cx    XX   XX
                      @bspc @rmet @aw    XX   ret @spc
