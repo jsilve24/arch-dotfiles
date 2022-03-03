@@ -24,7 +24,7 @@
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
   caps      a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft        pgup    up      pgdn
-     lctl   lmet lalt           spc            ralt    prnt   rctl        left    down    right
+     lctl   lmet lalt           spc            ralt    sys   rctl        left    down    right
 )
  
 
@@ -36,7 +36,7 @@
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
   @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    '    ret
   \(        z    x    c    v    b    n    m    ,    .    /       \)         @wqute  up      XX  
-     lctl   lmet @lalt          spc            ralt      prnt   rctl        left    down    right
+     lctl   lmet @lalt          spc           @ralt     @prnt   rctl        left    down    right
 )
 
 (deflayer lshift
@@ -63,7 +63,7 @@
   XX        XX   XX   XX   XX     XX   -    &    *    XX   XX   XX   XX   XX     
   XX        XX   XX   bspc C-bspc XX   `    ^    %    $    \_   XX   XX   
   XX        XX   XX   XX   XX     XX   ~    !    @    #    XX   XX            XX      up      XX  
-     lctl   lmet lalt           spc            ralt      prnt   rctl        left    down    right
+     lctl   lmet lalt           spc            ralt      XX     rctl        left    down    right
 )
 
 (deflayer delim
@@ -72,7 +72,7 @@
   XX        XX   XX   XX   XX   XX   -    {    }    XX   XX   XX   XX   XX     
   _         XX   XX   XX   XX   XX   +    [    ]    XX   \_   XX   XX   
   XX        XX   XX   XX   XX   XX   =    \(   \)   #    XX   XX            XX      up      XX  
-     lctl   lmet lalt           spc            ralt      prnt   rctl        left    down    right
+     lctl   lmet lalt           spc            ralt      XX     rctl        left    down    right
 )
 
 (deflayer num
@@ -81,7 +81,7 @@
   XX        XX   XX   XX   XX   XX   -    7    8    9    *    XX   XX   XX     
   _         XX   XX   XX   XX   XX   +    4    5    6    .    XX   XX   
   XX        XX   XX   XX   XX   XX   =    1    2    3    /    XX            XX      up      XX  
-     lctl   lmet lalt           0              ralt      prnt   rctl        left    down    right
+     lctl   lmet lalt           0              ralt      XX     rctl        left    down    right
 )
 
 (deflayer navigation
@@ -90,7 +90,7 @@
   XX        XX   XX   XX   XX   XX   XX   pgdn pgup XX   XX   XX   XX   XX     
   _         lsft XX   XX   XX   XX   @←   @↓   @↑   @→   rsft XX   XX   
   XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX            XX      up      XX  
-     lctl   lmet lalt           0              ralt      prnt   rctl        left    down    right
+     lctl   lmet lalt           0              ralt      XX     rctl        left    down    right
 )
 
 #| aliases -----------------------------------------------------------------------|#
@@ -107,6 +107,9 @@
   lalt (tap-hold 165 A-tab lalt)
   wqute (tap-macro M-tab P100 q)
   wQute (tap-macro M-tab P100 Q)
+  ralt (tap-macro M-tab P100 S)
+  prnt (tap-macro M-tab P100 V)
+
 
   ;; shift layers
   F (tap-hold 165 F (around lsft (layer-toggle navigation)))
