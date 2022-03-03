@@ -55,14 +55,14 @@
 (deflayer base
   caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  XX prnt slck pause
 
-  =      1    2    3    4    5                   6    7    8    9    0    -
+  XX     1    2    3    4    5                   6    7    8    9    0    XX
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
-         @grv _    XX   XX                            @wS  @wV  @w=  @wqute
+         @grv _  @dabrv C-'                           @wS  @wV  @w=  @wqute
 
-                           @Cu   XX     XX   XX
-                     @bspc @rmet @aw    XX   ret @spc
+                           @Cc   @Cu    XX   XX
+                     @bspc @rmet C-g    @aw  ret @spc
                                  @spl   \
 )
 
@@ -130,10 +130,10 @@
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
   @Esc   _    @S   @D   @F   @G                  H    J    K    L    :    "
   {      Z    X    C    V    B                   N    M    <    >    ?    }
-        @Grv  XX   XX   XX                            XX   XX   XX   @wqute
+        @Grv  XX   XX   XX                            XX   XX   XX   @wQute
 
                            _     _      _    _
-                     @Bspc @Rmet _      _    @Ret @Spc
+                     @Bspc @Rmet _      _    _  @Spc
                                  _      | 
 
 )
@@ -149,7 +149,7 @@
          @Grv XX   XX   XX                            XX   XX   XX   @wQute
 
                            _     _      _    _
-                     @Bspc @Rmet _      _    @Ret @Spc
+                     @Bspc @Rmet _      _    _  @Spc
                                  _      | 
 
 )
@@ -162,13 +162,12 @@ Alias					;
 (defalias
   esc (tap-hold-next 200 esc lctl)
   bspc (tap-hold-next 200 bspc lalt)
-  ret (tap-hold-next 200 ret rsft)
   tab (tap-hold-next 200 tab (layer-toggle navigation))
-  a (tap-hold 165 a (layer-toggle lshift))
-  ; (tap-hold 165 ; (layer-toggle rshift))
-  f (tap-hold 165 f (layer-toggle navigation))
-  s (tap-hold 165 s (layer-toggle sym))
-  g (tap-hold 165 g (layer-toggle delim))
+  a (tap-hold 150 a (layer-toggle lshift))
+  ; (tap-hold 150 ; (layer-toggle rshift))
+  f (tap-hold 150 f (layer-toggle navigation))
+  s (tap-hold 150 s (layer-toggle sym))
+  g (tap-hold 150 g (layer-toggle delim))
   d (tap-hold 150 d (layer-toggle num))
   spc (tap-hold 200 spc lctl)
   rmet (tap-hold 165 C-bspc rmet)
@@ -179,10 +178,10 @@ Alias					;
 
 
   ;; shift layer
-  F (tap-hold 165 F (around lsft (layer-toggle navigation)))
-  S (tap-hold 165 S (layer-toggle sym))
-  G (tap-hold 165 G (around lsft (layer-toggle delim)))
-  D (tap-hold 165 D (layer-toggle num))
+  F (tap-hold 150 F (around lsft (layer-toggle navigation)))
+  S (tap-hold 150 S (layer-toggle sym))
+  G (tap-hold 150 G (around lsft (layer-toggle delim)))
+  D (tap-hold 150 D (layer-toggle num))
   Tab  (around lsft tab)
   Esc  (around lsft @esc)
   Rmet (around lsft rmet)
@@ -190,7 +189,6 @@ Alias					;
   Spc  (around lsft @spc)
   Lsft (around lsft \))
   Rsft (around lsft \()
-  Ret  (around lsft @ret)
   Bspc (around lsft @bspc)
   Grv  (around rmet grv)
 
@@ -203,6 +201,7 @@ Alias					;
   wQute (tap-macro M-tab P100 Q)
   spl A-tab
   aw  (around rmet spc)
+  dabrv (around lalt /) 
 
   
   ;; Fancy names for arrows

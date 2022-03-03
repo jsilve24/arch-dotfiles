@@ -23,8 +23,8 @@
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc      
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
   caps      a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft      z    x    c    v    b    n    m    ,    .    /    rsft           pgup    up      pgdn
-     lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft        pgup    up      pgdn
+     lctl   lmet lalt           spc            ralt    prnt   rctl        left    down    right
 )
  
 
@@ -35,8 +35,8 @@
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc      
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
   @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    '    ret
-  \(        z    x    c    v    b    n    m    ,    .    /       \)         XX      up      XX  
-     lctl   lmet @lalt          spc            ralt rmet prnt   rctl        left    down    right
+  \(        z    x    c    v    b    n    m    ,    .    /       \)         @wqute  up      XX  
+     lctl   lmet @lalt          spc            ralt      prnt   rctl        left    down    right
 )
 
 (deflayer lshift
@@ -44,8 +44,8 @@
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
   @Esc      _   @S   @D   @F   @G    H    J    K    L    :    "    S-ret
-  {         Z    X    C    V    B    N    M    <    >    ?     }             XX      S-up      XX  
-     S-lctl S-lmet S-lalt         S-spc            S-ralt S-rmet XX  S-rctl  S-left  S-down    S-right
+  {         Z    X    C    V    B    N    M    <    >    ?     }             @wQute  S-up      XX  
+     S-lctl S-lmet S-lalt         S-spc            S-ralt        XX  S-rctl  S-left  S-down    S-right
 )
 
 (deflayer rshift
@@ -53,17 +53,17 @@
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
   @Esc      A   @S   @D   @F   @G    H    J    K    L    _    "    S-ret
-  {         Z    X    C    V    B    N    M    <    >    ?     }             XX      S-up      XX  
-     S-lctl S-lmet S-lalt         S-spc            S-ralt S-rmet XX  S-rctl  S-left  S-down    S-right
+  {         Z    X    C    V    B    N    M    <    >    ?     }             @wQute  S-up      XX  
+     S-lctl S-lmet S-lalt         S-spc            S-ralt        XX  S-rctl  S-left  S-down    S-right
 )
 
 (deflayer sym
-  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
-  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
-  XX        XX   XX   XX   XX   XX   -    &    *    XX   XX   XX   XX   XX     
-  XX        XX   XX   XX   XX   XX   `    ^    %    $    \_   XX   XX   
-  XX        XX   XX   XX   XX   XX   ~    !    @    #    XX   XX            XX      up      XX  
-     lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
+  esc       XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX   XX      
+  XX        XX   XX   XX   XX     XX   -    &    *    XX   XX   XX   XX   XX     
+  XX        XX   XX   bspc C-bspc XX   `    ^    %    $    \_   XX   XX   
+  XX        XX   XX   XX   XX     XX   ~    !    @    #    XX   XX            XX      up      XX  
+     lctl   lmet lalt           spc            ralt      prnt   rctl        left    down    right
 )
 
 (deflayer delim
@@ -72,7 +72,7 @@
   XX        XX   XX   XX   XX   XX   -    {    }    XX   XX   XX   XX   XX     
   _         XX   XX   XX   XX   XX   +    [    ]    XX   \_   XX   XX   
   XX        XX   XX   XX   XX   XX   =    \(   \)   #    XX   XX            XX      up      XX  
-     lctl   lmet lalt           spc            ralt rmet prnt   rctl        left    down    right
+     lctl   lmet lalt           spc            ralt      prnt   rctl        left    down    right
 )
 
 (deflayer num
@@ -81,7 +81,7 @@
   XX        XX   XX   XX   XX   XX   -    7    8    9    *    XX   XX   XX     
   _         XX   XX   XX   XX   XX   +    4    5    6    .    XX   XX   
   XX        XX   XX   XX   XX   XX   =    1    2    3    /    XX            XX      up      XX  
-     lctl   lmet lalt           0              ralt rmet prnt   rctl        left    down    right
+     lctl   lmet lalt           0              ralt      prnt   rctl        left    down    right
 )
 
 (deflayer navigation
@@ -90,7 +90,7 @@
   XX        XX   XX   XX   XX   XX   XX   pgdn pgup XX   XX   XX   XX   XX     
   _         lsft XX   XX   XX   XX   @←   @↓   @↑   @→   rsft XX   XX   
   XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX            XX      up      XX  
-     lctl   lmet lalt           0              ralt rmet prnt   rctl        left    down    right
+     lctl   lmet lalt           0              ralt      prnt   rctl        left    down    right
 )
 
 #| aliases -----------------------------------------------------------------------|#
@@ -98,13 +98,15 @@
 
 (defalias
   esc (tap-hold-next 200 esc lctl)
-  a (tap-hold 165 a (layer-toggle lshift))
-  ; (tap-hold 165 ; (layer-toggle rshift))
-  f (tap-hold 165 f (layer-toggle navigation))
-  s (tap-hold 165 s (layer-toggle sym))
-  g (tap-hold 165 g (layer-toggle delim))
+  a (tap-hold 155 a (layer-toggle lshift))
+  ; (tap-hold 155 ; (layer-toggle rshift))
+  f (tap-hold 155 f (layer-toggle navigation))
+  s (tap-hold 155 s (layer-toggle sym))
+  g (tap-hold 155 g (layer-toggle delim))
   d (tap-hold 150 d (layer-toggle num))
-  lalt (tap-hold 165 bspc lalt)
+  lalt (tap-hold 165 A-tab lalt)
+  wqute (tap-macro M-tab P100 q)
+  wQute (tap-macro M-tab P100 Q)
 
   ;; shift layers
   F (tap-hold 165 F (around lsft (layer-toggle navigation)))

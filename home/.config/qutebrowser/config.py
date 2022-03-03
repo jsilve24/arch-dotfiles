@@ -3,7 +3,9 @@ config.load_autoconfig()
 
 ### Key Bindings
 
-config.bind("ga", 'spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ace-window \'global))"')
+config.bind('xs', 'config-cycle statusbar.show always never')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
 
 ### Theme
 

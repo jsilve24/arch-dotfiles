@@ -54,6 +54,10 @@ settings:
     global: chromium
   qt.workarounds.remove_service_workers:
     global: true
+  statusbar.show:
+    global: never
+  tabs.show:
+    global: never
   url.default_page:
     global: https://google.com
   url.searchengines:
