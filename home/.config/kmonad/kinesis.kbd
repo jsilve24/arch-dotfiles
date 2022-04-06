@@ -61,7 +61,7 @@
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
          @grv _  @dabrv C-'                           @wS  @wV  @w=  @wqute
 
-                           @Cc   @Cu    XX   XX
+                           @Cc   XX     XX   @Cu
                      @bspc @rmet C-g    @aw  ret @spc
                                  @spl   \
 )
@@ -82,11 +82,11 @@
 )
 
 (deflayer sym
-  XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX   XX
-  XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
-  XX   XX   XX   XX   XX   XX                   -    &    *    XX   XX   XX
-  XX   XX   XX   XX   XX   XX                   `    ^    %    $    \_   XX
-  XX   XX   XX   XX   XX   XX                   ~    !    @    #    XX   XX
+  XX   XX   XX   XX   XX     XX   XX   XX   XX    XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX     XX                   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   XX   XX     XX                   XX   &    *    XX   XX   XX
+  XX   XX   XX   bspc C-bspc XX                   `    ^    %    $    \_   XX
+  XX   XX   XX   XX   XX     XX                   ~    !    @    #    XX   XX
        XX   XX   XX   XX                             XX   XX   XX   XX
 
                           XX    XX      XX   XX 
@@ -98,9 +98,9 @@
 (deflayer delim
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
-  _    XX   XX   XX   XX   XX                   -    {    }    XX   XX   XX
-  XX   XX   XX   XX   XX   XX                   +    [    ]    XX   \_   XX
-  XX   XX   XX   XX   XX   XX                   =    \(   \)   XX   XX   XX
+  _    XX   XX   XX   XX   XX                   XX   {    }    XX   XX   XX
+  XX   XX   XX   XX   XX   XX                   XX   [    ]    XX   \_   XX
+  XX   XX   XX   XX   XX   XX                   XX   \(   \)   XX   XX   XX
        XX   XX   XX   XX                             XX   XX   XX   XX
 
                           _     _       _    _  

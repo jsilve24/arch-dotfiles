@@ -26,7 +26,12 @@ settings:
   content.blocking.whitelist:
     global:
     - https://speedtesting.herokuapp.com/*
+  content.cookies.store:
+    global: true
+  content.default_encoding:
+    global: iso-8859-1
   content.desktop_capture:
+    global: ask
     https://meet.google.com: true
   content.media.audio_capture:
     https://dukemed.webex.com: true
@@ -55,9 +60,9 @@ settings:
   qt.workarounds.remove_service_workers:
     global: true
   statusbar.show:
-    global: never
+    global: always
   tabs.show:
-    global: never
+    global: always
   url.default_page:
     global: https://google.com
   url.searchengines:
