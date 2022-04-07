@@ -133,7 +133,7 @@
         @Grv  XX   XX   XX                            XX   XX   XX   @wQute
 
                            _     _      _    _
-                     @Bspc @Rmet _      _    _  @Spc
+                     @Bspc @Rmet _      _    S-ret @Spc
                                  _      | 
 
 )
@@ -149,7 +149,7 @@
          @Grv XX   XX   XX                            XX   XX   XX   @wQute
 
                            _     _      _    _
-                     @Bspc @Rmet _      _    _  @Spc
+                     @Bspc @Rmet _      _    S-ret  @Spc
                                  _      | 
 
 )
