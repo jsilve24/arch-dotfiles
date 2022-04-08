@@ -53,13 +53,13 @@
   -------------------------------------------------------------------------- |#
 
 (deflayer base
-  caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  XX prnt slck pause
+  caps F1   F2   F3   F4   F5   F6   F7   F8   F9   F10  F11  @abbrev prnt slck pause
 
   XX     1    2    3    4    5                   6    7    8    9    0    XX
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
-         @grv _  @dabrv C-'                           @wS  @wV  @w=  @wqute
+         @grv _ @dabrv C-'                           @wS  @wV  @w=  @wqute
 
                            @Cc   XX     XX   @Cu
                      @bspc @rmet C-g    @aw  ret @spc
@@ -155,9 +155,49 @@
 )
 
 
+(deflayer abbrev1
+  XX    XX       XX   XX     XX   XX   XX   XX   XX   XX    XX   XX   @abbrev2  XX   XX   XX
+  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+  XX    XX       XX   @ae    XX   XX                   XX   XX   XX   XX   @ap  XX      
+  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+  XX    XX       XX   XX     XX   XX                   @an  XX   XX   XX   XX   XX
+        XX       _    XX     XX                             XX   XX   XX   XX
+
+                          _     _       _    _  
+                   _      _     _       _    _     _   
+                                _       _ 
+)
+
+(deflayer abbrev2
+  XX    XX       XX   XX     XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
+  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+  XX    XX       XX   @aE    XX   XX                   XX   XX   XX   XX   @aP  XX
+  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+        XX       XX   XX     XX                             XX   XX   XX   XX
+
+                          _     _       _    _  
+                   _      _     _       _    _     _   
+                                _       _ 
+)
+
+
+
+
 #| --------------------------------------------------------------------------
-Alias					;
+Alias					; ;
 -------------------------------------------------------------------------- |#
+
+;; abbreviations
+(defalias 
+  ae #(j s i l v e 2 4 )
+  ap #(j d s 6 6 9 6)
+  aE #(j s i l v e 2 4 @ g m a i l . c o m)
+  aP #(j u s t i n s i l v e r m a n @ p s u . e d u)
+  an #(3 1 0 8 0 6 2 3 1 5)
+)
+
+
 
 (defalias
   esc (tap-hold-next 200 esc lctl)
@@ -203,9 +243,12 @@ Alias					;
   aw  (around rmet spc)
   dabrv (around lalt /) 
 
+  abbrev (around-next (layer-toggle abbrev1)) 
+  abbrev2 (around-next (layer-toggle abbrev2))
   
   ;; Fancy names for arrows
   ↑ up  ↓ down  ← left  → rght)
+
 
 
 #| -------------------------------------------------------------------------
