@@ -1,0 +1,131 @@
+;;                               Configuration for most TKL keyboards
+;;                       use this if you need numeric keypad in some scenarios
+;;                   binded as numpad keys (not just numerics) for alt-codes input
+
+(defcfg
+  ;; ** For Linux **
+  input  (device-file "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v9.0-event-kbd") ;; Change this line for your device
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc  del  home
+  tab       q    w    e    r    t    y    u    i    o    p    [    ]    \          end
+  caps      a    s    d    f    g    h    j    k    l    ;    '    ret             pgup
+  lsft      z    x    c    v    b    n    m    ,    .    /     rsft          up    pgdn      
+     lctl   lmet lalt           spc            ralt menu  rctl         left down  right
+)
+ 
+
+#| layers -----------------------------------------------------------------------|#
+
+(deflayer base
+  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12        
+  grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc  del  home
+  tab       q    w    e    r    t    y    u    i    o    p    [    ]    \          end
+  @esc      @a   @s   @d   @f   @g   h    j    k    l    @;   '    ret             pgup
+  @lsft     z    x    c    v    b    n    m    ,    .    /    @rsft          up    pgdn      
+     lctl   lmet lalt           spc           rsft  menu  rctl         left down  right
+)
+
+
+(deflayer num
+  _         _    _    _    _    _    _    _    _    _    _    _    _          
+  _         _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
+  _         _    _    _    _    _    -    1    2    3    _    _    _    _          _  
+  _         _    _    _    _    _    +    4    5    6    :    _    _               _    
+  _         _    _    _    _    _    =    7    8    9    _    _              _     _          
+  _      _    _              0              _    _    _                 _    _     _    
+  )
+
+(deflayer sym
+  _         _    _    _    _    _    _    _    _    _    _    _    _          
+  _         _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
+  _         _    _    _    _    _    _    !    @    #    _    _    _    _          _  
+  _         _    _    _    _    _    `    ^    %    $    _    _    _               _    
+  _         _    _    _    _    _    ~    &    *    _    _    _              _     _          
+     _      _    _              _              _    _    _              _    _     _    
+)
+
+(deflayer delim
+  _         _    _    _    _    _    _    _    _    _    _    _    _          
+  _         _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
+  _         _    _    _    _    _    -    {    }    _    _    _    _    _          _  
+  _         _    _    _    _    _    +    [    ]    \_   _    _    _               _    
+  _         _    _    _    _    _    =    <    >    _    _    _              _     _          
+     _      _    _              _              _    _    _              _    _     _    
+)
+
+(deflayer navigation
+  _         _    _    _    _    _    _    _    _    _    _    _    _          
+  _         _    _    _    _    _    _    _    _    _    _    _    _    _     _    _   
+  _         _    _    _    _    _    _    pgdn pgup _    _    _    _    _          _  
+  _         _    _    _    _    _    @←   @↓   @↑   @→   _    _    _               _    
+  _         _    _    _    _    _    _    _    _    _    _    _              _     _          
+  _      _    _              _              _    _    _                 _    _     _    
+  )
+
+
+(deflayer lshift
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        
+  ~         !    @    #    $    %    ^    &    *    \(   \)   \_   +    XX     XX  XX
+  @Tab      Q    W    E    R    T    Y    U    I    O    P    {    }    |          XX
+  @Esc      _    @S   @D   @F   @G   H    J    K    L    :    "    @Ret            XX
+  @Lsft     Z    X    C    V    B    N    M    <    >    ?    @Rsft           XX   XX      
+     @Lctl   @Lmet @Lalt          @Spc           XX   XX    XX            XX  XX   XX
+)
+
+
+(deflayer rshift
+  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX        
+  ~         !    @    #    $    %    ^    &    *    \(   \)   \_   +    XX    XX   XX
+  @Tab      Q    W    E    R    T    Y    U    I    O    P    {    }    |          XX
+  @Esc      A    @S   @D   @F   @G   H    J    K    L    _    "    @Ret            XX
+  @Lsft     Z    X    C    V    B    N    M    <    >    ?    @Rsft          XX    XX      
+     @Lctl   @Lmet @Lalt          @Spc           XX    XX     XX        XX   XX   XX
+)
+
+
+
+#| aliases -----------------------------------------------------------------------|#
+
+
+(defalias
+  a (tap-hold 175 a (layer-toggle lshift))
+  ; (tap-hold 175 ; (layer-toggle rshift))
+  esc (tap-hold-next 200 esc lctl)
+  lsft (tap-hold-next 200 \( (layer-toggle sym))
+  rsft (tap-hold-next 200 \) (layer-toggle sym))
+  f (tap-hold 200 f (layer-toggle navigation))
+  s (tap-hold 200 s (layer-toggle sym)
+  d (tap-hold 200 d (layer-toggle delim))
+  g (tap-hold 200 g (layer-toggle num))
+
+  ;; shift layer
+  F (tap-hold 200 F (around lsft (layer-toggle navigation)))
+  S (tap-hold 200 S (layer-toggle sym))
+  D (tap-hold 200 D (around lsft (layer-toggle delim)))
+  G (tap-hold 200 G (layer-toggle num))
+  Tab (around lsft tab)
+  Esc (around lsft @esc)
+  Lmet (around lsft lmet)
+  Lctl (around lsft lctl)
+  Lalt (around lsft lalt)
+  Spc  (around lsft spc)
+  Lsft (around lsft \))
+  Rsft (around lsft \()
+  Ret (around lsft ret)
+
+;; Fancy names for arrows
+  ↑ up  ↓ down  ← left  → rght)

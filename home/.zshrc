@@ -78,8 +78,6 @@ plugins=(git
 	 fzf-tab # must come beefore zsh-autosuggtestions or syntax-highlighting
 	 thefuck
 	 colored-man-pages
-	 q
-	 nohup
 	 extract
 	 zsh-autosuggestions
 	 zsh-syntax-highlighting)
