@@ -239,10 +239,27 @@ yay -S ly
 systemctl enable ly.ervice
 # configure ly
 vim /etc/ly/config.ini
+# setup pam login through GnuPG (setup follows readme at: https://github.com/cruegge/pam-gnupg)
+yay -S gnupg
+# add the following to /etc/pam.d/ly to setup pam-gnupg
+auth     optional  pam_gnupg.so store-only
+session  optional  pam_gnupg.so
+# add to ~/.gnupg/gpg-agent.conf
+allow-present-passphrase
+# (optional) Also add to ~/.gnupg/gpg-agent
+max-cache-ttl 86400
+# to have cache timeout after 1 day
+# aside: add to ~/.gnupg/gpg-agent to get loopback
+# from here: https://vxlabs.com/2021/03/21/gnupg-pinentry-via-the-emacs-minibuffer/
+allow-loopback-entry 
+# then run
+gpgconf --reload gpg-agent
+# then run gpg -K --with-keygrip and Write the keygrip for the encryption subkey marked [E] – shown in boldface in the output above – into ~/.pam-gnupg. If you want to unlock multiple keys or subkeys, add all keygrips on separate lines.
+# Set the same password for your gpg key and your user account. All pam-gnupg does is to send the password as entered to gpg-agent. It is therefore not compatible with auto-login of any kind; you actually have to type your password for things to work.
+
 
 ## Install python ##
 pacman -S python-pip
-
 
 ## Setup i3 ##
 pacman -S i3-wm i3status xterm dmenu arandr
@@ -286,6 +303,7 @@ tar xvzf aur....tar.gz
 cd aur...
 makepkg -si
 # then select java8-openjfx to install 
+# copy ~/.cache/mu to new machine or reinitialize mu store 
 
 # install dragon drag and drop
 yay -S dragon-drop
@@ -308,10 +326,8 @@ yay -S network-manager-applet
 yay -S ttf-fira-code pandoc ripgrep imagemagick
 yay -S wget 
 
-
 # install emacs
 yay -S emacs28-git
-
 
 ## Setup EXWM ## 
 # add the following to /usr/share/xsessions/emacs.desktop
@@ -331,7 +347,6 @@ systemctl enable kmonad-kinesis.service
 systemctl enable kmonad-lenovo.service
 systemctl enable kmonad-scult.service
 
-
 ## Setup R ## 
 yay -S r tcl tk libgit2 gcc-fortran libxls
 
@@ -341,6 +356,7 @@ yay -S alsa-utils pulseaudio pulseaudio-alsa pamixer
 # TODO: pulseaudio-jack and pulseaudio-bluetooth
 
 ## Setup Brightness ## 
+# TODO
 
 ## Setup Printing at Home ##
 yay -S cups ## read again
@@ -361,4 +377,4 @@ then make it executrable
 then run:  grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Assorted other software ##
-yay -S libreoffice-still inkscape
+yay -S libreoffice-still inkscape spotify
