@@ -356,12 +356,55 @@ yay -S alsa-utils pulseaudio pulseaudio-alsa pamixer
 # TODO: pulseaudio-jack and pulseaudio-bluetooth
 
 ## Setup Brightness ## 
-# TODO
+# From here: https://github.com/natj/guide-to-configuring-arch-on-lenovo-carbon-x1-gen7
+# You can check the current brightness with:
+# 
+# cat /sys/class/backlight/intel_backlight/brigthness
+# and maximum possible brightness (to get a feeling of the scaling) with
+# 
+# cat /sys/class/backlight/intel_backlight/max_brigthness
+# Different machines might have different bl_device so check that intel_backlight exists.
+# 
+# For the actual brightness control we need to add user to video group in oder to have permission to write to the needed configuration files.
+# 
+# Add a file /etc/udev/rules.d/backlight.rules with:
+# 
+# ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+# ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+# Then
+# 
+# sudo usermod -aG video jds6696
+# After this you have permission to change bl_dev and Fn+F5/F6 should work.
+# or better yet install acpilight (I tried version 1.2-2) and then it provides a command xbacklight that works nicely (whereas xorg-xbacklight package did not)
+# 
+# use xbacklight -set [0-100]
+# 
+# Ref:
+# 
+# https://wiki.archlinux.org/index.php/Backlight
+# 
+# After this reset brightness (between 0 and 512) using
+# "sudo echo 350 > /sys/class/backlight/intel_backlight/brightness"
 
 ## Setup Printing at Home ##
 yay -S cups ## read again
 yay -S brother-hl-l2380dw
 # ppd file gets installed to /opt/brother/Printers/HLL2380DW/cupswrapper/brother-HLL2380DW-cups-en.ppd
+# to get network discovery of printers setup avahi https://wiki.archlinux.org/title/Avahi
+yay -S avahi
+# install nss-mdns to get local hostname resolution
+yay -S nss-mdns 
+systemctl enable avahi-daemon.service
+systemctl start avahi-daemon.service
+# Then, edit the file /etc/nsswitch.conf and change the hosts line to include mdns_minimal [NOTFOUND=return] before resolve and dns:
+hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
+
+# then restart /enable cups.service
+systemctl enable cups.service
+systemctl start cups.service
+
+# then setup printers under ManagePrinting app
+
 
 ## Setup backup suite ##
 yay -S borg timeshift
@@ -375,6 +418,9 @@ GRUB_FORCE_HIDDEN_MENU="true"
 then create /etc/grub.d/31_hold_shift (see above link for more details)
 then make it executrable
 then run:  grub-mkconfig -o /boot/grub/grub.cfg
+
+## Setup touchscreen ##
+# TODO
 
 ## Assorted other software ##
 yay -S libreoffice-still inkscape spotify
