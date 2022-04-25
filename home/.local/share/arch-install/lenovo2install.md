@@ -316,6 +316,7 @@ yay -S feh
 
 # install tex
 yay -S texlive-science # for algorithm2e package
+yay -S texlive-core texlive-fontsextra texlive-latexextra biber texlive-bibtexextra
 
 # install stuff for pdf-tools
 yay -S libpng zlib poppler-glib
