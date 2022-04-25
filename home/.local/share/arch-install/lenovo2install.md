@@ -241,6 +241,7 @@ systemctl enable ly.ervice
 vim /etc/ly/config.ini
 # setup pam login through GnuPG (setup follows readme at: https://github.com/cruegge/pam-gnupg)
 yay -S gnupg
+# NOTE .gnupg and a bunch of .gpg encoded stuff is in bitwardent under GNUPG Store
 # add the following to /etc/pam.d/ly to setup pam-gnupg
 auth     optional  pam_gnupg.so store-only
 session  optional  pam_gnupg.so
@@ -278,7 +279,7 @@ pacman -S xdotool
 
 # setup dropbox and bitwarden
 yay -S dropbox
-pacman -S bitwarden
+pacman -S bitwarden bitwarden-cli
 pacman -S rsync
 
 ## Setup gpg credentials and login manager ## 
@@ -352,6 +353,7 @@ yay -S r tcl tk libgit2 gcc-fortran libxls
 
 ## Setup Sound ##
 yay -S alsa-utils pulseaudio pulseaudio-alsa pamixer
+# no microphone detected, tried installing sof-firmware and alsa-ucm-conf from here: https://bbs.archlinux.org/viewtopic.php?id=258633
 
 # TODO: pulseaudio-jack and pulseaudio-bluetooth
 

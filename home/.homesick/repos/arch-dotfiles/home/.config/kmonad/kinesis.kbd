@@ -159,7 +159,7 @@
   XX    XX       XX   XX     XX   XX   XX   XX   XX   XX    XX   XX   @abbrev2  XX   XX   XX
   XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
   XX    XX       XX   @ae    XX   XX                   XX   XX   XX   XX   @ap  XX      
-  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+  XX    XX       XX   XX     XX   XX                   @ah  @aj  XX   XX   XX   XX
   XX    XX       XX   XX     XX   XX                   @an  XX   XX   XX   XX   XX
         XX       _    XX     XX                             XX   XX   XX   XX
 
@@ -172,7 +172,7 @@
   XX    XX       XX   XX     XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
   XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
   XX    XX       XX   @aE    XX   XX                   XX   XX   XX   XX   @aP  XX
-  XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
+  XX    XX       XX   XX     XX   XX                   @aH  @aJ  XX   XX   XX   XX
   XX    XX       XX   XX     XX   XX                   XX   XX   XX   XX   XX   XX
         XX       XX   XX     XX                             XX   XX   XX   XX
 
@@ -191,11 +191,15 @@ Alias					; ;
 ;; abbreviations
 (defalias 
   ae #(j s i l v e 2 4 )
+  aj #(J u s t i n)
+  aJ #(J u s t i n spc  S i l v e r m a n)
   ap #(j d s 6 6 9 6)
   aE #(j s i l v e 2 4 @ g m a i l . c o m)
   aP #(j u s t i n s i l v e r m a n @ p s u . e d u)
   an #(3 1 0 8 0 6 2 3 1 5)
-)
+  ah #(1 2 3 spc A u t u m n spc C i r c l e)
+  aH #(1 2 3 spc A u t u m n spc C i r c l e , spc P o r t spc M a t i l d a , spc P A spc 1 6 8 7 0))  
+
 
 
 
