@@ -289,6 +289,13 @@ pacman -S rsync
 pacman -S github-cli
 gh auth login
 
+## Setup git credential store for other git repos like overleaf ##
+# run this: (see archwiki for git)
+
+yay -S netrc
+# Follow instructions here: https://blog.knoldus.com/store-git-credentials-encrypted/
+need to run: git config --global credential.helper /home/jds6696/bin/credential-helper
+
 ## Setup Emacs ##
 # words for ispell-complete
 pacman -S words wordnet-common wordnet-cli aspell aspell-en
