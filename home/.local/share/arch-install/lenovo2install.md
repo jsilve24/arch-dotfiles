@@ -228,7 +228,7 @@ pacman -S fwupd # to get firmware updates
 pacman -S udisks2 # to deal with this warning https://github.com/fwupd/fwupd/wiki/PluginFlag:esp-not-found
 pacman -S nvidia
 
-# Then ran -- can repeat as needed
+# Then ran -- can repeat as needed -- firmware
 fwupdmgr get-devices
 fwupdmgr refresh
 fwupdmgr get-updates
@@ -290,11 +290,17 @@ pacman -S github-cli
 gh auth login
 
 ## Setup git credential store for other git repos like overleaf ##
-# run this: (see archwiki for git)
+# follow these instructions: https://andrearichiardi.com/blog/posts/git-credential-netrc.html
 
-yay -S netrc
-# Follow instructions here: https://blog.knoldus.com/store-git-credentials-encrypted/
-need to run: git config --global credential.helper /home/jds6696/bin/credential-helper
+# get the git contributed netrc build
+git clone https://github.com/git/git.git
+cd git
+cd contrib/credential/netrc
+make
+cp -v git-credential-netrc `$HOME//bin` # on my $PATH
+git config --global credential.helper netrc
+# note I stored .netrc.gpg in home directory for this and a copy is stored in bitwarden
+
 
 ## Setup Emacs ##
 # words for ispell-complete
