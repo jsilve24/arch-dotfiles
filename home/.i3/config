@@ -107,14 +107,14 @@ bindsym Mod4+semicolon exec --no-startup-id i3-dmenu-desktop
 
 
 # change focus
-# bindsym Mod4+$left focus left
-# bindsym Mod4+$down focus down
-# bindsym Mod4+$up focus up
-# bindsym Mod4+$right focus right
-bindsym Mod4+$left exec ~/bin/i3-navigate-emacs left
-bindsym Mod4+$down  exec ~/bin/i3-navigate-emacs down
-bindsym Mod4+$up exec ~/bin/i3-navigate-emacs up
-bindsym Mod4+$right exec ~/bin/i3-navigate-emacs right
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+# bindsym Mod4+$left exec ~/bin/i3-navigate-emacs left
+# bindsym Mod4+$down  exec ~/bin/i3-navigate-emacs down
+# bindsym Mod4+$up exec ~/bin/i3-navigate-emacs up
+# bindsym Mod4+$right exec ~/bin/i3-navigate-emacs right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Left focus left

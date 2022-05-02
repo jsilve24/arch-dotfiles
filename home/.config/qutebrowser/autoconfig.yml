@@ -38,6 +38,7 @@ settings:
     https://teams.microsoft.com: true
   content.media.audio_video_capture:
     https://dukemed.webex.com: true
+    https://patient.visitnow.org: true
     https://teams.microsoft.com: true
   content.media.video_capture:
     https://dukemed.webex.com: true

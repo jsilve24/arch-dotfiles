@@ -298,7 +298,9 @@ cd git
 cd contrib/credential/netrc
 make
 cp -v git-credential-netrc `$HOME//bin` # on my $PATH
-git config --global credential.helper netrc
+# add the following line to .gitconfig
+[credential]
+	helper = !/home/jds6696/bin/git-credential-netrc
 # note I stored .netrc.gpg in home directory for this and a copy is stored in bitwarden
 
 
@@ -428,15 +430,34 @@ yay -S python-llfuse
 
 ## Hide GRUB at Start unless Shift is held down ##
 # https://wiki.archlinux.org/title/GRUB/Tips_and_tricks#Hide_GRUB_unless_the_Shift_key_is_held_down
-vim /etc/default/grub
-GRUB_FORCE_HIDDEN_MENU="true"
+# vim /etc/default/grub
+# GRUB_FORCE_HIDDEN_MENU="true"
+# 
+# then create /etc/grub.d/31_hold_shift (see above link for more details)
+# then make it executrable
+# then run:  grub-mkconfig -o /boot/grub/grub.cfg
+# Turned off as this wasn't working
 
-then create /etc/grub.d/31_hold_shift (see above link for more details)
-then make it executrable
-then run:  grub-mkconfig -o /boot/grub/grub.cfg
+## Add backup lts kernel ##
+pacman -S linux-lts
+# then modify grub to fix defaults : added/edited in /etc/default/grub
+GRUB_DISABLE_SUBMENU=y # this makes kernel options show up on main grub screen not the sub-menu under advanced options
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+# then rebuild 
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
 
 ## Setup touchscreen ##
 # TODO
 
 ## Assorted other software ##
 yay -S libreoffice-still inkscape spotify
+yay -S pdfjs # to read pdfs in qutebrowser
+yay -S rstudio-desktop
+pacman -S htop
+
+# PSU VPN setup
+install globalprotect-openconnect from AUR
+portal address: secure-connect.psu.edu

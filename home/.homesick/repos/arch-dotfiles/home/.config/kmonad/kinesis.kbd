@@ -59,7 +59,7 @@
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
-         @grv _ @dabrv C-'                           @wS  @wV  @w=  @wqute
+         @grv _ @dabrv C-'                           @wS  @wV  C-;  @wqute
 
                            @Cc   XX     XX   @Cu
                      @bspc @rmet C-g    @aw  ret @spc
@@ -112,7 +112,7 @@
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   _    XX   XX   XX   XX   XX                   -    7    8    9    *    XX
-  XX   XX   XX   XX   XX   XX                   +    4    5    6    .    XX
+  XX   XX   XX   XX   A-/  XX                   +    4    5    6    .    XX
   XX   XX   XX   XX   XX   XX                   =    1    2    3    /    XX
        XX   XX   XX   XX                             XX   XX   XX   XX
 
@@ -240,7 +240,6 @@ Alias					; ;
   ;; macros
   wS (tap-macro M-tab P100 S)
   wV (tap-macro M-tab P100 V)
-  w= (tap-macro M-=)
   wqute (tap-macro M-tab P100 q)
   wQute (tap-macro M-tab P100 Q)
   spl A-tab
