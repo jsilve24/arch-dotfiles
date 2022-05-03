@@ -313,12 +313,17 @@ yay -s cmake libvterm
 
 # mail stuff
 yay -s autoconf automake pkg-config mu java8-openjfx isync
-# Want to install davmail 5.5.1 which I know works 
-# Download pkg from here: https://aur.archlinux.org/cgit/aur.git/commit/?h=davmail&id=f2ff7554c3453ed3ea07f4611a6529d7d608863b
-tar xvzf aur....tar.gz
-cd aur...
-makepkg -si
-# then select java8-openjfx to install 
+<!-- # Want to install davmail 5.5.1 which I know works  -->
+<!-- # Download pkg from here: https://aur.archlinux.org/cgit/aur.git/commit/?h=davmail&id=f2ff7554c3453ed3ea07f4611a6529d7d608863b -->
+<!-- tar xvzf aur....tar.gz -->
+<!-- cd aur... -->
+<!-- makepkg -si -->
+<!-- # then select java8-openjfx to install  -->
+Follow davmail install instruction from here: 
+http://davmail.sourceforge.net/linuxsetup.html
+Basically download latest .zip from sourceforge (not the trunk), then uncompress, cd in and ./davmail azul then ./davmail and done...
+Should update pkgbuild at some point
+
 # copy ~/.cache/mu to new machine or reinitialize mu store 
 
 # install dragon drag and drop
