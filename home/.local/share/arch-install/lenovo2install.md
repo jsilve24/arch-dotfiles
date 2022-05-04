@@ -427,7 +427,10 @@ systemctl enable cups.service
 systemctl start cups.service
 
 # then setup printers under ManagePrinting app
-
+ 
+## Setup Printing in IST ## 
+pacman -S samba smbclient
+TODO not setup
 
 ## Setup backup suite ##
 yay -S borg timeshift
@@ -466,3 +469,4 @@ pacman -S htop
 # PSU VPN setup
 install globalprotect-openconnect from AUR
 portal address: secure-connect.psu.edu
+Gateway: INTERNAL (select through systemtray icon)
