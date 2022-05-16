@@ -258,6 +258,11 @@ gpgconf --reload gpg-agent
 # then run gpg -K --with-keygrip and Write the keygrip for the encryption subkey marked [E] – shown in boldface in the output above – into ~/.pam-gnupg. If you want to unlock multiple keys or subkeys, add all keygrips on separate lines.
 # Set the same password for your gpg key and your user account. All pam-gnupg does is to send the password as entered to gpg-agent. It is therefore not compatible with auto-login of any kind; you actually have to type your password for things to work.
 
+## Get cantarell font working on arch ##
+# Seems to be a bug in this font on arch -- someone created this AUR package which solves it. 
+# Here is the bug report: https://bugs.archlinux.org/task/72212
+yay -S cantarell-static-fonts
+
 
 ## Install python ##
 pacman -S python-pip
@@ -334,6 +339,9 @@ ln -S /sbin/dragon-drop /home/jds6696/bin/dragon
 yay -S feh
 # TODO: need to set new wallpaper
 
+# install scrot 
+yay -S scrot
+
 # install tex
 yay -S texlive-science # for algorithm2e package
 yay -S texlive-core texlive-fontsextra texlive-latexextra biber texlive-bibtexextra
@@ -370,7 +378,7 @@ systemctl enable kmonad-lenovo.service
 systemctl enable kmonad-scult.service
 
 ## Setup R ## 
-yay -S r tcl tk libgit2 gcc-fortran libxls
+yay -S r tcl tk libgit2 gcc-fortran libxls openmp
 
 ## Setup Sound ##
 yay -S alsa-utils pulseaudio pulseaudio-alsa pamixer
@@ -464,6 +472,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 yay -S libreoffice-still inkscape spotify
 yay -S pdfjs # to read pdfs in qutebrowser
 yay -S rstudio-desktop
+yay -S xournalpp
 pacman -S htop
 
 # PSU VPN setup
