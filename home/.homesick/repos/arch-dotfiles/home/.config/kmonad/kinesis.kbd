@@ -112,7 +112,7 @@
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   _    XX   XX   XX   XX   XX                   -    7    8    9    *    XX
-  XX   XX   XX   XX   A-/  XX                   +    4    5    6    .    XX
+  XX   XX   XX   XX   A-/  @cspca               +    4    5    6    .    XX
   XX   XX   XX   XX   XX   XX                   =    1    2    3    /    XX
        XX   XX   XX   XX                             XX   XX   XX   XX
 
@@ -220,6 +220,8 @@ Alias					; ;
   Cx (tap-hold 165 C-x rctl)
   grv (tap-macro spc grv)
 
+  ;; emacs completions
+  cspca (tap-macro C-spc a)
 
   ;; shift layer
   F (tap-hold 150 F (around lsft (layer-toggle navigation)))

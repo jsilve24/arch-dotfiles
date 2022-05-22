@@ -474,8 +474,18 @@ yay -S pdfjs # to read pdfs in qutebrowser
 yay -S rstudio-desktop
 yay -S xournalpp
 pacman -S htop
+yay -S hugo
+yay -S pdftd bcprov java-commons-lang # to allow removing passwords from pdf documents
 
 # PSU VPN setup
 install globalprotect-openconnect from AUR
 portal address: secure-connect.psu.edu
 Gateway: INTERNAL (select through systemtray icon)
+
+## Debugging hiberation/suspend issues
+# on the new lenovo suspend was not working the following fixed it:
+# following these instructions: https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation
+# I found that the kernel parameter resume was not set: (check with sysctl -a)
+# modified /etc/default/grub and added option between quotes in GRUB_CMDLINE_LINUX_DEFAULT
+# find uuid of swap with lsblk -f
+resume=UUID=0dbf6a47-9ea4-4379-b46e-fdb6faadf7d1
