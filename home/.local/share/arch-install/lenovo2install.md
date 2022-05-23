@@ -436,9 +436,8 @@ systemctl start cups.service
 
 # then setup printers under ManagePrinting app
  
-## Setup Printing in IST ## 
-pacman -S samba smbclient
-TODO not setup
+## Setup office printer
+pacman -S hplip # hp laserjet drivers
 
 ## Setup backup suite ##
 yay -S borg timeshift
