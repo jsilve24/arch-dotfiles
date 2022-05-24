@@ -475,6 +475,7 @@ yay -S xournalpp
 pacman -S htop
 yay -S hugo
 yay -S pdftd bcprov java-commons-lang # to allow removing passwords from pdf documents
+pacman -S unrar
 
 # PSU VPN setup
 install globalprotect-openconnect from AUR
