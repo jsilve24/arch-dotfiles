@@ -125,7 +125,7 @@ BEGIN {
     max_age_seconds = max_age*24*60*60
 
     if (header) {
-        print "#+TITLE:       Main Google calendar entries"
+        print "#+TITLE:       Google Calendar"
         print "#+AUTHOR:     ", author
         print "#+EMAIL:      ", emailaddress
         print "#+DESCRIPTION: converted using the ical2org awk script"

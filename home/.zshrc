@@ -137,6 +137,7 @@ alias mt="m -nw"
 alias se="systemctl --user start emacs.service"
 alias ke="systemctl --user stop emacs.service"
 alias fuck.emacs="pkill -SIGUSR2 emacs"
+alias fuck.mu="pkill -2 -u $UID mu"
 alias FUCK.emacs="pkill -9 emacs"
 # alias sense="watch -n 2 sensors"
 alias R="R --no-save"
@@ -149,8 +150,6 @@ alias R="R --no-save"
 alias psu-letter="git clone https://github.com/jsilve24/psu_letterhead.git"
 
 
-# doom
-alias doom=~/.mydoom.d/bin/doom
 
 # add in borgmatic
 PATH="$PATH:/root/.local/bin:/usr/sbin:/home/jds6696/.local/bin:/home/jds6696/bin"

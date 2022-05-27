@@ -352,8 +352,8 @@ yay -S libpng zlib poppler-glib
 # install nm-applet
 yay -S network-manager-applet
 
-# install fonts and other stuff
-yay -S ttf-fira-code pandoc ripgrep imagemagick
+# install fonts and other stuff 
+yay -S ttf-fira-code pandoc ripgrep imagemagick ripgrep-all
 yay -S wget 
 
 # install emacs
