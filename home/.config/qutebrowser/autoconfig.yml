@@ -21,6 +21,12 @@ settings:
         ']]': tab-next
         ga: spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ace-window
           'global))"
+        xs: config-cycle statusbar.show always never
+        xt: config-cycle tabs.show always never
+        xx: config-cycle tabs.show always never;; config-cycle statusbar.show always
+          never
+  colors.completion.category.bg:
+    global: '#002b36'
   colors.webpage.darkmode.enabled:
     global: false
   content.blocking.whitelist:
@@ -52,10 +58,10 @@ settings:
     global: false
   editor.command:
     global:
-    - emacsclient
-    - -c
-    - +{line}:{column}
+    - /home/jds6696/bin/exwm-qute-edit
     - '{file}'
+    - '{line}'
+    - '{column}'
   fileselect.handler:
     global: default
   qt.force_software_rendering:

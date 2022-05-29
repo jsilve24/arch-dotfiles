@@ -76,11 +76,11 @@
 )
 
 (deflayer num
-  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
-  XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
-  XX        XX   XX   XX   XX   XX   -    7    8    9    *    XX   XX   XX     
-  _         XX   XX   XX   XX   XX   +    4    5    6    .    XX   XX   
-  XX        XX   XX   XX   XX   XX   =    1    2    3    /    XX            XX      up      XX  
+  esc       XX   XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX      
+  XX        XX   XX   XX   XX   XX     -    7    8    9    *    XX   XX   XX     
+  _         XX   XX   XX   A-/  @cspca +    4    5    6    .    XX   XX   
+  XX        XX   XX   XX   XX   XX     =    1    2    3    /    XX            XX      up      XX  
      lctl   lmet lalt           0              ralt      XX     rctl        left    down    right
 )
 
@@ -109,6 +109,9 @@
   wQute (tap-macro M-tab P100 Q)
   ralt (tap-macro M-tab P100 S)
   prnt (tap-macro M-tab P100 V)
+
+  cspca (tap-macro C-spc a)
+
 
 
   ;; shift layers

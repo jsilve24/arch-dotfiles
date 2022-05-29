@@ -312,6 +312,7 @@ cp -v git-credential-netrc `$HOME//bin` # on my $PATH
 ## Setup Emacs ##
 # words for ispell-complete
 pacman -S words wordnet-common wordnet-cli aspell aspell-en
+yay -S global ctags # global provides gtags
 
 # vterm stuff
 yay -s cmake libvterm
@@ -357,7 +358,7 @@ yay -S ttf-fira-code pandoc ripgrep imagemagick ripgrep-all
 yay -S wget 
 
 # install emacs
-yay -S emacs28-git
+pacman -S emacs-nativecomp
 
 ## Setup EXWM ## 
 # add the following to /usr/share/xsessions/emacs.desktop
@@ -470,6 +471,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ## Assorted other software ##
 yay -S libreoffice-still inkscape spotify
 yay -S pdfjs # to read pdfs in qutebrowser
+pacman -S inotify-tools # used by exwm-qute-edit script
 yay -S rstudio-desktop
 yay -S xournalpp
 pacman -S htop

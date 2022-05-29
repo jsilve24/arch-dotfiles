@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+emacsclient -e '(find-file-other-window "'$1'")'
+emacsclient -e '(goto-line '$2')'
+emacsclient -e '(move-to-column '$3')'
+inotifywait -e close_write $1
