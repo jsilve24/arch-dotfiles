@@ -354,11 +354,13 @@ yay -S libpng zlib poppler-glib
 yay -S network-manager-applet
 
 # install fonts and other stuff 
-yay -S ttf-fira-code pandoc ripgrep imagemagick ripgrep-all
+yay -S pandoc ripgrep imagemagick ripgrep-all 
+pacman -S perl-image-exiftool # for org-bib-mode
 yay -S wget 
+yay -S ttf-dejavu ttf-fira-code ttf-hack ttf-jetbrains-mono ttf-iosevka
 
 # install emacs
-pacman -S emacs-nativecomp
+pacman -S emacs-nativecomp 
 
 ## Setup EXWM ## 
 # add the following to /usr/share/xsessions/emacs.desktop
@@ -491,3 +493,7 @@ Gateway: INTERNAL (select through systemtray icon)
 # modified /etc/default/grub and added option between quotes in GRUB_CMDLINE_LINUX_DEFAULT
 # find uuid of swap with lsblk -f
 resume=UUID=0dbf6a47-9ea4-4379-b46e-fdb6faadf7d1
+
+## scratch 
+## https://github.com/asoroa/ical2org.py 
+pip install ical2orgpy

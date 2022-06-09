@@ -19,8 +19,6 @@ settings:
         <Alt+o>: set-cmd-text -s :open -w
         '[[': tab-prev
         ']]': tab-next
-        # ga: spawn emacsclient -e "(let ((exwm-input-line-mode-passthrough t)) (ace-window
-        #   'global))"
         xs: config-cycle statusbar.show always never
         xt: config-cycle tabs.show always never
         xx: config-cycle tabs.show always never;; config-cycle statusbar.show always
@@ -29,6 +27,8 @@ settings:
     global: '#002b36'
   colors.webpage.darkmode.enabled:
     global: false
+  content.blocking.enabled:
+    global: true
   content.blocking.whitelist:
     global:
     - https://speedtesting.herokuapp.com/*
