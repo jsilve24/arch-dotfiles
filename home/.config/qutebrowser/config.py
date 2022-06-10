@@ -7,7 +7,7 @@ config.bind('xs', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
 config.bind('gt', 'set-cmd-text -s :tab-take')
-config.bind('gD', 'download-delete')
+config.bind('gx', 'download-delete')
 config.bind('ta', 'set content.blocking.enabled false ;; reload -f ;; later 5s set content.blocking.enabled true')
 
 

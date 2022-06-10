@@ -494,6 +494,14 @@ Gateway: INTERNAL (select through systemtray icon)
 # find uuid of swap with lsblk -f
 resume=UUID=0dbf6a47-9ea4-4379-b46e-fdb6faadf7d1
 
+## debugging lack of boot on arch after update-alternatives
+## Add to /etc/default/grub the kernel parameter
+## from here https://wiki.archlinux.org/title/NVIDIA#Installation issue with intell cpu and nvidia driver
+ibt=off 
+# then run 
+grub-mkconfig -o /boot/grub/grub.cfg
+# relevant bug is tracked here: https://github.com/NVIDIA/open-gpu-kernel-modules/issues/256
+
 ## scratch 
 ## https://github.com/asoroa/ical2org.py 
 pip install ical2orgpy
