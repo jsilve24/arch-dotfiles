@@ -69,9 +69,9 @@
 (deflayer delim
   esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
   XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
-  XX        XX   XX   XX   XX   XX   -    {    }    XX   XX   XX   XX   XX     
-  _         XX   XX   XX   XX   XX   +    [    ]    XX   \_   XX   XX   
-  XX        XX   XX   XX   XX   XX   =    \(   \)   #    XX   XX            XX      up      XX  
+  XX        XX   XX   XX   XX   XX   XX   {    }    XX   XX   XX   XX   XX     
+  _         XX   XX   XX   XX   XX   C-;  [    ]    XX   \_   XX   XX   
+  XX        XX   XX   XX   XX   XX   XX   \(   \)   #    XX   XX            XX      up      XX  
      lctl   lmet lalt           spc            ralt      XX     rctl        left    down    right
 )
 
