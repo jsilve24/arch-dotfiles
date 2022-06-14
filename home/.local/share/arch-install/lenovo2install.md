@@ -477,9 +477,15 @@ pacman -S inotify-tools # used by exwm-qute-edit script
 yay -S rstudio-desktop
 yay -S xournalpp
 pacman -S htop
-yay -S hugo
 yay -S pdftd bcprov java-commons-lang # to allow removing passwords from pdf documents
 pacman -S unrar
+
+# setup hugo
+yay -S hugo
+# for lab website sam theme need nmp
+pacman -S npm
+npm install postcss postcss-cli autoprefixer
+
 
 # PSU VPN setup
 install globalprotect-openconnect from AUR
