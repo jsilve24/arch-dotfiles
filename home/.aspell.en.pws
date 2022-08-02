@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1209 
+personal_ws-1.1 en 1216 
 AFOR
 AIC
 ANOVA
@@ -511,6 +511,7 @@ fancyvrb
 feedforward
 ferromagnetism
 fido
+fiducial
 finetune
 finetuning
 finiteness
@@ -521,6 +522,7 @@ foundational
 frequentist
 functionals
 functor
+gcal
 generalised
 generalising
 generalizability
@@ -1173,6 +1175,7 @@ unimodal
 unimodality
 uninterpretable
 unintuitive
+uninvertible
 univariate
 unlearnable
 unnormalized
@@ -1204,6 +1207,7 @@ vivo
 von
 voxel
 voxels
+where
 whereafter
 wildcard
 workflow

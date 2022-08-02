@@ -331,6 +331,8 @@ Basically download latest .zip from sourceforge (not the trunk), then uncompress
 Should update pkgbuild at some point
 
 # copy ~/.cache/mu to new machine or reinitialize mu store 
+mu init --maildir=~/.mail --my-address=jsilve24@gmail.com --my-address=JustinSilverman@psu.edu
+mu index
 
 # install dragon drag and drop
 yay -S dragon-drop
@@ -471,7 +473,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # TODO
 
 ## Assorted other software ##
-yay -S libreoffice-still inkscape spotify
+yay -S libreoffice-still inkscape gimp spotify
 yay -S pdfjs # to read pdfs in qutebrowser
 pacman -S inotify-tools # used by exwm-qute-edit script
 yay -S rstudio-desktop
