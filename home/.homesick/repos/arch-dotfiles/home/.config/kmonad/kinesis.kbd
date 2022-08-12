@@ -27,6 +27,7 @@
    Keyboard is to be prepared like this:
    1. Reset memory: `Program+Control+F10`
    2. Swap Escape and CapsLock: `Program+F12 Esc CapsLock CapsLock Esc Program+F12` 
+   3. Swap left send to left lower key with F12
 
 
    Kinesis cheatsheet: http://web.mit.edu/jmorzins/Public/kinesisCheatSheet.html
