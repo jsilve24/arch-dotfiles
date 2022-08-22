@@ -384,6 +384,8 @@ systemctl enable kmonad-scult.service
 
 ## Setup R ## 
 yay -S r tcl tk libgit2 gcc-fortran libxls openmp
+# in R do the following
+install.packages("rmarkdown")
 
 ## Setup Sound ##
 yay -S alsa-utils pulseaudio pulseaudio-alsa pamixer
@@ -513,3 +515,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ## scratch 
 ## https://github.com/asoroa/ical2org.py 
 pip install ical2orgpy
+
+## Setup Wacom
+# It should mostly just work on arch: https://wiki.archlinux.org/title/Graphics_tablet
+pacman -S xf86-input-wacom # to get the xsetwacom 
