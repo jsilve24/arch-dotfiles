@@ -504,6 +504,14 @@ Gateway: INTERNAL (select through systemtray icon)
 # find uuid of swap with lsblk -f
 resume=UUID=0dbf6a47-9ea4-4379-b46e-fdb6faadf7d1
 
+# also need to update initramfs, edit /etc/mkinitcpio.conf
+# add resume to hooks
+HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
+
+# then regenerate Initramfs
+mkinitcpio -P
+
+
 ## debugging lack of boot on arch after update-alternatives
 ## Add to /etc/default/grub the kernel parameter
 ## from here https://wiki.archlinux.org/title/NVIDIA#Installation issue with intell cpu and nvidia driver
