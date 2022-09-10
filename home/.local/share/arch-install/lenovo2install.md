@@ -527,3 +527,8 @@ pip install ical2orgpy
 ## Setup Wacom
 # It should mostly just work on arch: https://wiki.archlinux.org/title/Graphics_tablet
 pacman -S xf86-input-wacom # to get the xsetwacom 
+
+
+## setup zotra
+yay -S zotero-translation-server-git
+systemctl enable zotero-translation-server.service
