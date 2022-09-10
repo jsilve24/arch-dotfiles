@@ -10,6 +10,7 @@ config.bind('gt', 'set-cmd-text -s :tab-take')
 config.bind('gD', 'download-delete')
 config.bind('gx', 'tab-give')
 config.bind('ta', 'set content.blocking.enabled false ;; reload -f ;; later 5s set content.blocking.enabled true')
+config.bind(',,l', 'spawn --userscript org-protocol store-link')
 
 
 ### Theme
