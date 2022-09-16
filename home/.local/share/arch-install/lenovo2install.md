@@ -360,6 +360,11 @@ yay -S pandoc ripgrep imagemagick ripgrep-all
 pacman -S perl-image-exiftool # for org-bib-mode
 yay -S wget 
 yay -S ttf-dejavu ttf-fira-code ttf-hack ttf-jetbrains-mono ttf-iosevka
+<!-- # ioveska comfy from prot -->
+<!-- # https://github.com/protesilaos/iosevka-comfy -->
+<!-- cd ~/.local/share/fonts/ -->
+<!-- git clone --depth 1 https://git.sr.ht/~protesilaos/iosevka-comfy -->
+
 
 # install emacs
 pacman -S emacs-nativecomp 
@@ -532,3 +537,6 @@ pacman -S xf86-input-wacom # to get the xsetwacom
 ## setup zotra
 yay -S zotero-translation-server-git
 systemctl enable zotero-translation-server.service
+
+## setup org-protocol
+yay -S xdo
