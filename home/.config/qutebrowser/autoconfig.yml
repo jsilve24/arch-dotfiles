@@ -69,7 +69,7 @@ settings:
   qt.workarounds.remove_service_workers:
     global: true
   statusbar.show:
-    global: never
+    global: always
   tabs.show:
     global: always
   url.default_page:
