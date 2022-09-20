@@ -481,7 +481,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Assorted other software ##
 yay -S libreoffice-still inkscape gimp spotify
-yay -S pdfjs # to read pdfs in qutebrowser
+yay -S pdfjs-legacy # to read pdfs in qutebrowser (legacy version only needed until Qt6 support in qutebrowser)
 pacman -S inotify-tools # used by exwm-qute-edit script
 yay -S rstudio-desktop
 yay -S xournalpp
