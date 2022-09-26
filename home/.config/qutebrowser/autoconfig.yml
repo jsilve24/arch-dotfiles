@@ -54,6 +54,8 @@ settings:
     https://messages.google.com: true
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: true
+  content.unknown_url_scheme_policy:
+    global: allow-from-user-interaction
   downloads.prevent_mixed_content:
     global: false
   editor.command:

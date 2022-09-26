@@ -314,6 +314,9 @@ cp -v git-credential-netrc `$HOME//bin` # on my $PATH
 pacman -S words wordnet-common wordnet-cli aspell aspell-en
 yay -S global ctags # global provides gtags
 
+# Ledger stuff
+pacman -S ledger
+
 # vterm stuff
 yay -s cmake libvterm
 
@@ -389,6 +392,7 @@ systemctl enable kmonad-scult.service
 
 ## Setup R ## 
 yay -S r tcl tk libgit2 gcc-fortran libxls openmp
+
 # in R do the following
 install.packages("rmarkdown")
 
