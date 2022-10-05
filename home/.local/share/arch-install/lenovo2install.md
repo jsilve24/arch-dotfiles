@@ -310,6 +310,10 @@ cp -v git-credential-netrc `$HOME//bin` # on my $PATH
 
 
 ## Setup Emacs ##
+
+# LSP stuff
+yay -S digestif-git
+
 # words for ispell-complete
 pacman -S words wordnet-common wordnet-cli aspell aspell-en
 yay -S global ctags # global provides gtags
