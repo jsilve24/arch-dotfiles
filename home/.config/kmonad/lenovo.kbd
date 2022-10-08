@@ -34,7 +34,7 @@
   esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12      home    end    ins  del
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc      
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
-  @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    '    ret
+  @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    @'    ret
   \(        z    x    c    v    b    n    m    ,    .    /       \)         @wqute  up      XX  
      lctl   lmet @lalt          spc           @ralt     @prnt   rctl        left    down    right
 )
@@ -43,7 +43,7 @@
   esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
-  @Esc      _   @S   @D   @F   @G    H    J    K    L    :    "    S-ret
+  @Esc      _   @S   @D   @F   @G    H    J    K    L    :    @quote    S-ret
   {         Z    X    C    V    B    N    M    <    >    ?     }             @wQute  S-up      XX  
      S-lctl S-lmet S-lalt         S-spc            S-ralt        XX  S-rctl  S-left  S-down    S-right
 )
@@ -52,7 +52,7 @@
   esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
-  @Esc      A   @S   @D   @F   @G    H    J    K    L    _    "    S-ret
+  @Esc      A   @S   @D   @F   @G    H    J    K    L    _    @quote    S-ret
   {         Z    X    C    V    B    N    M    <    >    ?     }             @wQute  S-up      XX  
      S-lctl S-lmet S-lalt         S-spc            S-ralt        XX  S-rctl  S-left  S-down    S-right
 )
@@ -98,6 +98,8 @@
 
 (defalias
   esc (tap-hold-next 200 esc lctl)
+  ' (tap-hold-next 200 ' rctl)
+  quote (tap-hold-next 200 " S-rctl)
   a (tap-hold 155 a (layer-toggle lshift))
   ; (tap-hold 155 ; (layer-toggle rshift))
   f (tap-hold 155 f (layer-toggle navigation))
