@@ -2,7 +2,7 @@
 
 # customize these
 WGET=/usr/bin/wget
-ICS2ORG=ical2orgpy
+ICS2ORG=~/.local/bin/ical2orgpy # pip install ical2orgpy
 # ICS2ORG=~/bin/ical2org.awk	# 
 ICSFILE=~/.cache/ical2org/psu_cal.ics
 ORGFILE=~/Dropbox/org/cal-psu.org
