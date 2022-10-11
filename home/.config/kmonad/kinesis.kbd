@@ -57,7 +57,7 @@
 
   XX     1    2    3    4    5                   6    7    8    9    0    XX
   tab    q    w    e    r    t                   y    u    i    o    p    \
-  @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   '
+  @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   @'
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
          @grv _    XX  C-'                           @wS  @wV  XX   @wqute
 
@@ -72,7 +72,7 @@
 
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX   XX   XX                   XX   pgdn pgup XX   XX   XX
-  _    lsft XX   XX   XX   XX                   @←   @↓   @↑   @→   rsft XX
+  _    lsft XX   XX   XX   XX                   @←   @↓   @↑   @→   rsft _
   XX   XX   XX   XX   XX   XX                   XX   XX   XX   XX   XX   XX
   XX   XX   XX   XX                             XX   XX   XX   XX
 
@@ -128,7 +128,7 @@
 
   +      !    @    #    $    %                   ^    &    *    \(   \)   \_
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
-  @Esc   _    @S   @D   @F   @G                  H    J    K    L    :    "
+  @Esc   _    @S   @D   @F   @G                  H    J    K    L    :    @quote
   {      Z    X    C    V    B                   N    M    <    >    ?    }
         @Grv  XX   XX   C-"                            XX   XX   XX   @wQute
 
@@ -144,7 +144,7 @@
 
   +      !    @    #    $    %                   ^    &    *    \(   \)   \_
   @Tab   Q    W    E    R    T                   Y    U    I    O    P    |
-  @Esc   A    @S   @D   @F   @G                  H    J    K    L    _    "
+  @Esc   A    @S   @D   @F   @G                  H    J    K    L    _    @quote
   {      Z    X    C    V    B                   N    M    <    >    ?    }
          @Grv XX   XX   C-"                            XX   XX   XX   @wQute
 
@@ -195,7 +195,7 @@ Alias					; ;
   aJ #(J u s t i n spc  S i l v e r m a n)
   ap #(j d s 6 6 9 6)
   aE #(j s i l v e 2 4 @ g m a i l . c o m)
-  aP #(j u s t i n s i l v e r m a n @ p s u . e d u)
+  aP #(j d s 6 6 9 6 @ p s u . e d u)
   an #(3 1 0 8 0 6 2 3 1 5)
   ah #(1 2 3 spc A u t u m n spc C i r c l e)
   aH #(1 2 3 spc A u t u m n spc C i r c l e , spc P o r t spc M a t i l d a , spc P A spc 1 6 8 7 0))  
@@ -209,11 +209,12 @@ Alias					; ;
   tab (tap-hold-next 200 tab (layer-toggle navigation))
   a (tap-hold 150 a (layer-toggle lshift))
   ; (tap-hold 150 ; (layer-toggle rshift))
+  ' (tap-hold-next 200 ' rctl)
   f (tap-hold 150 f (layer-toggle navigation))
   s (tap-hold 150 s (layer-toggle sym))
   g (tap-hold 150 g (layer-toggle delim))
   d (tap-hold 150 d (layer-toggle num))
-  spc (tap-hold 200 spc lctl)
+  spc (tap-hold 200 spc lalt)
   rmet (tap-hold 165 C-bspc rmet)
   Cu (tap-hold 165 C-u rctl)
   Cc (tap-hold 165 C-c rctl)
@@ -237,6 +238,7 @@ Alias					; ;
   Rsft (around lsft \()
   Bspc (around lsft @bspc)
   Grv  (around rmet grv)
+  quote (tap-hold-next 200 " S-rctl)
 
 
   ;; macros
