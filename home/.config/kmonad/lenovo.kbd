@@ -76,12 +76,12 @@
 )
 
 (deflayer num
-  esc       XX   XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
-  XX        XX   XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX      
-  XX        XX   XX   XX   XX   XX     -    7    8    9    *    XX   XX   XX     
-  _         XX   XX   XX   A-/  @cspca +    4    5    6    .    XX   XX   
-  XX        XX   XX   XX   XX   XX     =    1    2    3    /    XX            XX      up      XX  
-     lctl   lmet lalt           0              ralt      XX     rctl        left    down    right
+  esc       XX   XX   XX   XX    XX     XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  XX        XX   XX   XX   XX    XX     XX   XX   XX   XX   XX   XX   XX   _      
+  XX        XX   XX   XX   XX    XX     -    7    8    9    *    XX   XX   XX     
+  _         XX   XX   XX   C-tab A-/    +    4    5    6    .    XX   XX   
+  XX        XX   XX   XX   XX    XX     =    1    2    3    /    XX            XX      up      XX  
+     lctl   lmet lalt            0              ralt      XX     rctl        left    down    right
 )
 
 (deflayer navigation

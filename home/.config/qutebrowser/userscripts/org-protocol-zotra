@@ -1,0 +1,5 @@
+#!/usr/bin/python
+import os, subprocess, urllib.parse
+quoted = urllib.parse.quote(os.environ["QUTE_URL"])
+dest = "org-protocol://zotra?url=" + quoted
+subprocess.run(["xdg-open", dest])

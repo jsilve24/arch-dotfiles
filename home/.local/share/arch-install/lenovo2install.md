@@ -312,7 +312,8 @@ cp -v git-credential-netrc `$HOME//bin` # on my $PATH
 ## Setup Emacs ##
 
 # LSP stuff
-yay -S digestif-git
+<!-- yay -S digestif-git -->
+<!-- yay -S texlab -->
 
 # words for ispell-complete
 pacman -S words wordnet-common wordnet-cli aspell aspell-en
