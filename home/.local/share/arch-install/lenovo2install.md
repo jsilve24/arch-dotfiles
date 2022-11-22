@@ -178,7 +178,9 @@ su - jds6696
 
 ## install other missing packages ##
 pacman -Syu # update first
-pacman -S xorg-server xorg-xrandr xorg-xinit xorg-xsetroot qutebrowser man git 
+pacman -S xorg-server xorg-xrandr xorg-xinit xorg-xsetroot qutebrowser man git git-lfs
+# setup git lfs
+git lfs install
 # choose man-db from core, jack2 over pipewire-jack, gnu-free-fonts 
 
 ## Enable Pacman Parallel Downloads and Parallel Compilation ##
@@ -384,6 +386,9 @@ Name=Emacs
 Exec=emacs
 Type=Application
 
+# Setup notifications
+yay -S dunst
+
 ## Setup KMonad ##
 yay -S kmonad-bin
 #simlink service files into /etc/systemd/system/kmonad.service
@@ -489,7 +494,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # TODO
 
 ## Assorted other software ##
-yay -S libreoffice-still inkscape gimp spotify
+yay -S libreoffice-still inkscape gimp spotify textext # last is for latex in inkscape
 yay -S pdfjs-legacy # to read pdfs in qutebrowser (legacy version only needed until Qt6 support in qutebrowser)
 pacman -S inotify-tools # used by exwm-qute-edit script
 yay -S rstudio-desktop

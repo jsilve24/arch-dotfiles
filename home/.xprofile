@@ -5,3 +5,7 @@
 
 # map CapsLock to Escape
 setxkbmap -option caps:escape
+
+# setup dbus to launch export necessary environmental variables before emacs
+# From here: https://github.com/emacs-eaf/emacs-application-framework/issues/36
+export $(dbus-launch)
