@@ -479,6 +479,13 @@ yay -S python-llfuse
 # then run:  grub-mkconfig -o /boot/grub/grub.cfg
 # Turned off as this wasn't working
 
+## Fixing issues with screen corruption/flickering
+
+<!-- https://ljvmiranda921.github.io/notebook/2021/09/01/linux-thinkpad-screen-flicker/ -->
+<!-- https://wiki.archlinux.org/title/intel_graphics (see screen flickering section) -->
+
+added i915.enable_psr=0 as kernel parameter (see above for how to do that)
+
 ## Add backup lts kernel ##
 pacman -S linux-lts
 # then modify grub to fix defaults : added/edited in /etc/default/grub
