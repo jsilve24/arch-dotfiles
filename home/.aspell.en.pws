@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1222 
+personal_ws-1.1 en 1226 
 AFOR
 AIC
 ANOVA
@@ -50,6 +50,7 @@ Chernoff
 Chervonenkis
 Cholesky
 CoDA
+CoDAs
 DAGs
 DBM
 DBM's
@@ -90,6 +91,7 @@ Gaussianity
 Gaussians
 Genomic
 GitHub
+Gloor
 HMMs
 Haar
 Hadamard
@@ -158,6 +160,7 @@ Markovianity
 Markovization
 Matlab's
 Matplotlib
+Metagenomics
 Minka
 Modelling
 MovieLens
@@ -1203,6 +1206,7 @@ untruncated
 unvalidated
 unweighted
 utopian
+vaginosis
 vanishingly
 variates
 variational

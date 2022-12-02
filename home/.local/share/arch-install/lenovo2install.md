@@ -271,7 +271,7 @@ pacman -S python-pip
 
 ## Setup i3 ##
 pacman -S i3-wm i3status xterm dmenu arandr
-yay -S caffeine-ng
+yay -S caffeine # used to use caffeine-ng which had an applet
 pacman -S jq # to get i3-navigate-emacs working
 pacman -S xdotool
 
@@ -561,3 +561,7 @@ systemctl enable zotero-translation-server.service
 
 ## setup org-protocol
 yay -S xdo
+
+## setup locate
+pacman -S plocate
+systemctl enable plocate-updatedb.timer
