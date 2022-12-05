@@ -1,9 +1,12 @@
+# list of linters: 
+#  https://lintr.r-lib.org/articles/lintr.html
 linters: linters_with_defaults(
     line_length_linter(120),
     semicolon_linter=NULL,
     trailing_whitespace_linter=NULL,
     infix_spaces_linter=NULL,
     brace_linter(allow_single_line=TRUE), 
-    commented_code_linter=NULL #,
-    # object_usage_linter=NULL
+    commented_code_linter=NULL ,
+    object_usage_linter=NULL,
+    object_name_linter=NULL
   )
