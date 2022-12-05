@@ -387,7 +387,7 @@ Exec=emacs
 Type=Application
 
 # Setup notifications
-yay -S dunst
+<!-- yay -S dunst -->
 
 ## Setup KMonad ##
 yay -S kmonad-bin
@@ -402,6 +402,8 @@ systemctl enable kmonad-scult.service
 
 ## Setup R ## 
 yay -S r tcl tk libgit2 gcc-fortran libxls openmp
+yay -S udunits # for the units package in R, required by ggpattern
+pacman -S openssl-1.1 ## to install phyloseq for some reason
 
 # in R do the following
 install.packages("rmarkdown")
