@@ -13,8 +13,7 @@ config.bind('gx', 'tab-give')
 config.bind('ta', 'set content.blocking.enabled false ;; reload -f ;; later 5s set content.blocking.enabled true')
 config.bind(',l', 'spawn --userscript org-protocol store-link')  
 config.bind(',,w', 'spawn --userscript org-protocol capture Pw')
-# config.bind(',,z', "set content.unknown_url_scheme_policy allow-all;; jseval location.href=('org-protocol://zotra?url='+ encodeURIComponent(location.href)).replace(/'/gi,\"%27\");; later 5s set content.unknown_url_scheme_policy allow-from-user-interaction")
-config.bind(',,z', 'spawn -u org-protocol-zotra')
+config.bind(',,z', "set content.unknown_url_scheme_policy allow-all;; jseval location.href=('org-protocol://zotra?url='+ encodeURIComponent(location.href)).replace(/'/gi,\"%27\");; later 5s set content.unknown_url_scheme_policy allow-from-user-interaction")
 config.bind('sh', 'history')
 
 ### Theme

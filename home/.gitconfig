@@ -1,0 +1,15 @@
+[user]
+	email = jsilve24@gmail.com
+	name = Justin Silverman
+[credential]
+	helper = !/home/jds6696/bin/git-credential-netrc
+	# helper = netrc
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[github]
+	user = jsilve24
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
