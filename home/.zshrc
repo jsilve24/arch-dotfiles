@@ -76,7 +76,6 @@ ZSH_THEME="spaceship"
 plugins=(git
 	 fzf
 	 fzf-tab # must come beefore zsh-autosuggtestions or syntax-highlighting
-	 thefuck
 	 colored-man-pages
 	 extract
 	 zsh-autosuggestions
