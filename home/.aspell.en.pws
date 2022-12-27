@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1227 
+personal_ws-1.1 en 1229 
 AFOR
 AIC
 ANOVA
@@ -198,6 +198,7 @@ Rademacher
 Rao
 Raphson
 Raphson's
+Reparameterizations
 Repurposing
 Riemannian
 SDP
@@ -1073,6 +1074,7 @@ sublinearity
 sublinearly
 submanifolds
 submarket
+submartingale
 submatrices
 submatrix
 submodels
