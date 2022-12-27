@@ -28,3 +28,4 @@ text/html=org.qutebrowser.qutebrowser.desktop
 application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
 application/pdf=emacs-client.desktop
+x-scheme-handler/org-protocol=org-protocol.desktop
