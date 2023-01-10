@@ -1,1 +1,2 @@
-options(crayon.enabled=FALSE)
+options(crayon.enabled=FALSE,
+        browser="qutebrowser")
