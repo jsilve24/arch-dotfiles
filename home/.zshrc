@@ -24,13 +24,13 @@ ZSH_THEME="spaceship"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -45,7 +45,7 @@ ZSH_THEME="spaceship"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -114,10 +114,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 # Setup Homeshick to manage dotfiles
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
@@ -126,9 +122,6 @@ eval "$(zoxide init zsh)"
 
 
 # Aliases
-# alias rr=ranger
-# alias rd="ranger ~/Downloads/"
-# alias bat=batcat
 alias e='emacsclient -a ""'
 alias et="emacsclient -a '' -nw"
 alias m='emacsclient --eval "(progn (magit-status) (delete-other-windows))" -a ""'
@@ -140,53 +133,10 @@ alias fuck.mu="pkill -2 -u $UID mu"
 alias FUCK.emacs="pkill -9 emacs"
 # alias sense="watch -n 2 sensors"
 alias R="R --no-save"
-
-
-# aliases for common commands
-#https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013424&sys_kb_id=010bbde4db0070d07fb5266e1396190a&spa=1
-# alias psu-connect="globalprotect connect -p secure-connect.psu.edu"
-# alias psu-disconnect="globalprotect disconnect"
 alias psu-letter="git clone https://github.com/jsilve24/psu_letterhead.git"
-
-
 
 # add in borgmatic
 PATH="$PATH:/root/.local/bin:/usr/sbin:/home/jds6696/.local/bin:/home/jds6696/bin"
-
-
-
-#BW alias
-# bwcopy() {
-#     # if hash bw 2>/dev/null; then
-#     if [[ -z "$BW_SESSION" ]]; then
-#         echo -n Password:
-#         read -s password
-#         export BW_SESSION=$(bw unlock $password --raw)
-#     fi
-
-#     bw get item "$(bw list items | jq '.[] | "\(.name) | username: \(.login.username) | id: \(.id)" ' | fzf --with-nth 1..-4 | awk '{print $(NF -0)}' | sed 's/\"//g')" | jq '.login.password' | sed 's/\"//g' | xclip -sel clip
-#     # fi
-# }
-
-# Set up printer in emacs
-# Not sure this is needed or not
-# PRINTER="Brother-HL-L2380DW-series"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jds6696/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/jds6696/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jds6696/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/jds6696/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 
 
 # Shell side configuration for vterm
