@@ -11,6 +11,8 @@ PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.gmail_mailpass.g
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
+Timeout 10000
+PipelineDepth 1
 
 # Remote storage
 IMAPStore gmail-remote
@@ -75,6 +77,8 @@ AuthMechs LOGIN
 SSLType None
 User jds6696@psu.edu
 PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.psu_mailpass.gpg"
+Timeout 10000
+PipelineDepth 1
 
 IMAPStore psu-remote
 Account psu
