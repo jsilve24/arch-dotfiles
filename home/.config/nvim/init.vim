@@ -1,3 +1,4 @@
+
 -- packer
 local ensure_packer = function()
   local fn = vim.fn
@@ -55,18 +56,6 @@ set softtabstop=2           " see multiple spaces as tabstops so <BS> does the r
 -- setup leader
 vim.g.mapleader = " "
 
--- more familiar window commands under leader
-vim.api.nvim_set_keymap("n", "<leader>wv", "<C-w>v", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>ws", "<C-w>s", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>wd", "<C-w>c", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>wh", "<C-w>h", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>wl", "<C-w>l", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>wj", "<C-w>j", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>wk", "<C-w>k", {noremap=true})
-
--- buffer bindings
-vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<CR>" , {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>bD", ":bd!<CR>", {noremap=true})
 
 -- map ,d :e <C-R>=expand("%:p:h") . "/" <CR>
 
