@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1230 
+personal_ws-1.1 en 1241 
 AFOR
 AIC
 ANOVA
@@ -26,6 +26,7 @@ Bacteremia
 Bayes's
 Bernstein's
 Bing
+Biostatistician
 Blackwellization
 Bonferroni
 Borel
@@ -97,6 +98,7 @@ Haar
 Hadamard
 Hastie
 Hellinger
+Hematopoietic
 Hermitian
 Hessians
 Hoeffding
@@ -163,6 +165,7 @@ Matplotlib
 Metagenomics
 Minka
 Modelling
+Morphometrics
 MovieLens
 NLP
 NNs
@@ -179,6 +182,7 @@ PCA
 PCR
 PIMs
 POMDP
+PSU
 Pegasos
 PhILR
 Phylofactor
@@ -199,6 +203,8 @@ Raman
 Rao
 Raphson
 Raphson's
+Rebecca
+Regionalized
 Reparameterizations
 Repurposing
 Riemannian
@@ -221,6 +227,7 @@ Silverman
 Smirnov
 Speciation
 Stirling's
+Strategize
 Tibshirani
 Tikhonov
 Toeplitz
@@ -250,6 +257,7 @@ additivity
 adjacencies
 adjoint
 adversarially
+afebrile
 affine
 affinely
 agnostically
@@ -543,6 +551,7 @@ geosciences
 geostatistics
 gmail
 graphlets
+grey
 groundedness
 halfplane
 halfspace
@@ -683,6 +692,7 @@ mentee
 mentorship
 metadata
 metagenomic
+metagenomics
 metavariable
 metavariables
 metformin
@@ -879,6 +889,7 @@ postprocessing
 pre
 precisions
 preconditioner
+predation
 preimages
 premultiply
 premultiplying
