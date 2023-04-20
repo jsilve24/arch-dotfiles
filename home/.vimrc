@@ -17,3 +17,9 @@ let mapleader = " "
 :nmap <leader>bD :bd!<CR>
 
 map ,d :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" from https://www.reddit.com/r/vim/comments/112e8ne/vim_function_to_move_following_word_into/j8k0mez/
+vnoremap K xgkp`[1v
+vnoremap L xp`[1v
+vnoremap H xhhp`[1v
+vnoremap J xgjp`[1v

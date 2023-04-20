@@ -16,9 +16,21 @@ settings:
   bindings.commands:
     global:
       normal:
+        ',,w': spawn --userscript org-protocol capture Pw
+        ',,z': set content.unknown_url_scheme_policy allow-all;; jseval location.href=('org-protocol://zotra?url='+
+          encodeURIComponent(location.href)).replace(/'/gi,"%27");; later 5s set content.unknown_url_scheme_policy
+          allow-from-user-interaction
+        ',l': spawn --userscript org-protocol store-link
         <Alt+o>: set-cmd-text -s :open -w
         '[[': tab-prev
         ']]': tab-next
+        gD: download-delete
+        gd: download-open
+        gt: set-cmd-text -s :tab-take
+        gx: tab-give
+        sh: history
+        ta: set content.blocking.enabled false ;; reload -f ;; later 5s set content.blocking.enabled
+          true
         xs: config-cycle statusbar.show always never
         xt: config-cycle tabs.show always never
         xx: config-cycle tabs.show always never;; config-cycle statusbar.show always
