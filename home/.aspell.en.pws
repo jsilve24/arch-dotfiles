@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1243 
+personal_ws-1.1 en 1246 
 AFOR
 AIC
 ANOVA
@@ -127,6 +127,7 @@ Kolmogorov
 Kullback
 LDA
 LDPC
+LFC
 LOESS
 LPD
 LPDs
@@ -983,6 +984,7 @@ reparametrizing
 representable
 representer
 reproducibility
+reproducibly
 reranking
 resample
 resamples
@@ -1143,6 +1145,7 @@ symmetrization
 symmetrized
 symmetrizing
 symplectic
+synonymously
 tabu
 teachability
 teleportation
