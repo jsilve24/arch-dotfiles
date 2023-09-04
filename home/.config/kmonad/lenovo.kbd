@@ -31,7 +31,7 @@
 #| layers -----------------------------------------------------------------------|#
 
 (deflayer base
-  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12      home    end    ins  del
+  esc       f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12      home    end    ins  @quit
   grv       1    2    3    4    5    6    7    8    9    0    -    =    bspc      
   tab       q    w    e    r    t    y    u    i    o    p    [    ]    \         
   @esc     @a   @s   @d   @f   @g    h    j    k    l   @;    @'    ret
@@ -40,7 +40,7 @@
 )
 
 (deflayer lshift
-  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  @quit
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
   @Esc      _   @S   @D   @F   @G    H    J    K    L    :    @quote    S-ret
@@ -49,7 +49,7 @@
 )
 
 (deflayer rshift
-  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  XX
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX     XX    XX   XX  @quit
   ~         !    @    #    $    %    ^    &    *    \(   \)   _    +    S-bspc      
   S-tab     Q    W    E    R    T    Y    U    I    O    P    {    }    |         
   @Esc      A   @S   @D   @F   @G    H    J    K    L    _    @quote    S-ret
@@ -58,7 +58,7 @@
 )
 
 (deflayer sym
-  esc       XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  esc       XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   @quit
   XX        XX   XX   XX   XX     XX   XX   XX   XX   XX   XX   XX   XX   XX      
   XX        XX   XX   XX   XX     XX   -    &    *    XX   XX   XX   XX   XX     
   XX        XX   XX   bspc C-bspc XX   `    ^    %    $    \_   XX   XX   
@@ -67,7 +67,7 @@
 )
 
 (deflayer delim
-  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   @quit
   XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
   XX        XX   XX   XX   XX   XX   XX   {    }    XX   XX   XX   XX   XX     
   _         XX   XX   XX   XX   XX   C-;  [    ]    XX   \_   XX   XX   
@@ -76,7 +76,7 @@
 )
 
 (deflayer num
-  esc       XX   XX   XX   XX    XX     XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  esc       XX   XX   XX   XX    XX     XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   @quit
   XX        XX   XX   XX   XX    XX     XX   XX   XX   XX   XX   XX   XX   _      
   XX        XX   XX   XX   XX    XX     -    7    8    9    *    XX   XX   XX     
   _         XX   XX   XX   C-tab A-/    +    4    5    6    .    XX   XX   
@@ -85,7 +85,7 @@
 )
 
 (deflayer navigation
-  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   XX
+  esc       XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX       XX   XX   XX   @quit
   XX        XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX      
   XX        XX   XX   XX   XX   XX   XX   pgdn pgup XX   XX   XX   XX   XX     
   _         lsft XX   XX   XX   XX   @←   @↓   @↑   @→   rsft XX   XX   
@@ -111,6 +111,8 @@
   wQute (tap-macro M-tab P100 Q)
   ralt (tap-macro M-tab P100 S)
   prnt (tap-macro M-tab P100 V)
+
+  quit (layer-toggle base)
 
   cspca (tap-macro C-spc a)
 
