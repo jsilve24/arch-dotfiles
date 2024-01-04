@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1262 
+personal_ws-1.1 en 1265 
 AFOR
 AIC
 ANOVA
@@ -112,6 +112,7 @@ IRLS
 IST
 IntelliJ
 IntelliJ's
+Interquartile
 Ising
 Isomap
 JDT
@@ -136,6 +137,7 @@ Lagrangians
 Laplace's
 Laplacian
 Laplacians
+Lehmann
 Leibler
 Levenshtein
 LibSVM
@@ -244,6 +246,7 @@ Viterbi
 WEKA
 WLS
 Welch
+Wilcoxon
 Wishart
 Xeon
 abelian
