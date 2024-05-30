@@ -134,6 +134,9 @@ alias FUCK.emacs="pkill -9 emacs"
 # alias sense="watch -n 2 sensors"
 alias R="R --no-save"
 alias psu-letter="git clone https://github.com/jsilve24/psu_letterhead.git"
+alias bm="bashmount"
+alias amount="bashmount"
+alias aumount="bashmount"
 
 # add in borgmatic
 PATH="$PATH:/root/.local/bin:/usr/sbin:/home/jds6696/.local/bin:/home/jds6696/bin"
