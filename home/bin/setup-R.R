@@ -1,7 +1,8 @@
 
 ## Core System Packages
-install.packages(c("tidyverse", "devtools", "Rcpp",
-                   "languageserver", "lintr", "usethis"), repos="http://cran.us.r-project.org")
+install.packages(c("tidyverse", "devtools", "Rcpp", "RcppEigen", 
+                   "languageserver", "lintr", "usethis"),
+                 repos="http://cran.us.r-project.org")
 
 ## Install my packages
 library(devtools)
@@ -22,6 +23,6 @@ BiocManager::install("DESeq2")
 BiocManager::install("phyloseq")
 
 ## Other assorted packages
-install.packages(c("glmnet"), repos="http://cran.us.r-project.org")
-install.packages(c("parallel"), repos="http://cran.us.r-project.org")
+install.packages(c("glmnet", "parallel", "rstan", "mgcv", "ggrepel"),
+                 repos="http://cran.us.r-project.org")
 
