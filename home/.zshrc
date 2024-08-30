@@ -138,6 +138,9 @@ alias bm="bashmount"
 alias amount="bashmount"
 alias aumount="bashmount"
 
+# jupyter notebooks
+alias jn="jupyter notebook --browser=firefox"
+
 # add in borgmatic
 PATH="$PATH:/root/.local/bin:/usr/sbin:/home/jds6696/.local/bin:/home/jds6696/bin"
 
