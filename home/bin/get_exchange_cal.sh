@@ -17,4 +17,4 @@ mkdir -p /home/jds6696/.cache/ical2org/
 $WGET -O $ICSFILE $URL
 # $ICS2ORG < $ICSFILE > $ORGFILE
 $ICS2ORG $ICSFILE $ORGFILE
-rm -f $ICSFILE
+# rm -f $ICSFILE

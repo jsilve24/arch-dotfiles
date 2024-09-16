@@ -3,7 +3,7 @@
 	name = Justin Silverman
 [credential]
 	helper = !/home/jds6696/bin/git-credential-netrc
-	# helper = netrc
+	helper = netrc
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [github]
