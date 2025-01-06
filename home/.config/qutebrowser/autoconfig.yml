@@ -52,6 +52,8 @@ settings:
     global: ask
     https://meet.google.com: true
     https://thomas327.science.psu.edu:6443: true
+  content.javascript.clipboard:
+    global: access-paste
   content.media.audio_capture:
     https://dukemed.webex.com: true
     https://meet.google.com: true
