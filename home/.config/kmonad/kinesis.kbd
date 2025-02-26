@@ -26,7 +26,7 @@
 
    Keyboard is to be prepared like this:
    1. Reset memory: `Program+Control+F10`
-   2. Swap Escape and CapsLock: `Program+F12 Esc CapsLock CapsLock Esc Program+F12` 
+   2. Swap Escape and CapsLock: `Program+F12 Esc CapsLock CapsLock Esc Program+12` 
    3. Swap left send to left lower key with F12
 
 
@@ -41,7 +41,7 @@
   tab  q    w    e    r    t                   y    u    i    o    p    \
   esc  a    s    d    f    g                   h    j    k    l    ;    '
   lsft z    x    c    v    b                   n    m    ,    .    / rsft
-       grv  F12  left rght                          up  down  [    ]
+       grv  ins  left rght                          up  down  [    ]
 
                            lctl lalt   rmet rctl
                       bspc del  home   pgup  ret spc
@@ -59,7 +59,7 @@
   tab    q    w    e    r    t                   y    u    i    o    p    \
   @esc   @a   @s   @d   @f   @g                  h    j    k    l    @;   @'
   \(     z    x    c    v    b                   n    m    ,    .    /  \)
-         @grv _    XX  C-'                           @wS  @wV  XX   @wqute
+         @grv F12    XX  C-'                           @wS  @wV  XX   @wqute
 
                            @Cc   C-g     XX   @Cu
                      @bspc @rmet [      ]    ret @spc
