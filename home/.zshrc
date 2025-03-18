@@ -137,13 +137,14 @@ alias psu-letter="git clone https://github.com/jsilve24/psu_letterhead.git"
 alias bm="bashmount"
 alias amount="bashmount"
 alias aumount="bashmount"
-alias louder="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 130%"
-alias LOUDER="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 150%"
-alias tooloud="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 100%"
+# alias louder="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 130%"
+# alias LOUDER="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 150%"
+# alias tooloud="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 100%"
+alias roar="ssh jds6696@submit.hpc.psu.edu"
 
 
 # jupyter notebooks
-alias jn="jupyter notebook --browser=firefox"
+alias jn="jupyter notebook --browser=chrome"
 
 # add in borgmatic
 PATH="$PATH:/root/.local/bin:/usr/sbin:/home/jds6696/.local/bin:/home/jds6696/bin"
