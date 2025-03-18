@@ -55,9 +55,12 @@ settings:
   content.headers.user_agent:
     https://accounts.google.com/*: Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101
       Firefox/135
+    www.sciencedirect.com: Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML,
+      like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/122.0.0.0 Safari/{webkit_version}
   content.javascript.clipboard:
     global: access-paste
   content.media.audio_capture:
+    https://chatgpt.com: true
     https://dukemed.webex.com: true
     https://meet.google.com: true
     https://teams.microsoft.com: true
