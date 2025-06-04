@@ -52,50 +52,20 @@ settings:
     global: ask
     https://meet.google.com: true
     https://thomas327.science.psu.edu:6443: true
-  content.headers.user_agent:
-    https://accounts.google.com/*: Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101
-      Firefox/135
-    www.sciencedirect.com: Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML,
-      like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/122.0.0.0 Safari/{webkit_version}
   content.javascript.clipboard:
     global: access-paste
   content.media.audio_capture:
     https://chatgpt.com: true
-    https://dukemed.webex.com: true
     https://meet.google.com: true
-    https://teams.microsoft.com: true
-  content.media.audio_video_capture:
-    https://dukemed.webex.com: true
-    https://meet.google.com: true
-    https://patient.visitnow.org: true
-    https://teams.microsoft.com: true
   content.media.video_capture:
-    https://dukemed.webex.com: true
     https://meet.google.com: true
-    https://teams.microsoft.com: true
   content.notifications.enabled:
-    https://calendar.google.com: false
-    https://messages.google.com: true
-  content.register_protocol_handler:
-    https://calendar.google.com?cid=%25s: false
-    https://mail.google.com?extsrc=mailto&url=%25s: true
-    https://outlook.office.com?mailtouri=%25s: false
+    https://calendar.google.com: true
+    https://colab.research.google.com: true
   content.unknown_url_scheme_policy:
     global: allow-from-user-interaction
-  downloads.prevent_mixed_content:
-    global: false
-  editor.command:
-    global:
-    - /home/jds6696/bin/exwm-qute-edit
-    - '{file}'
-    - '{line}'
-    - '{column}'
   fileselect.handler:
     global: default
-  qt.force_software_rendering:
-    global: chromium
-  qt.workarounds.remove_service_workers:
-    global: true
   statusbar.show:
     global: always
   tabs.show:
