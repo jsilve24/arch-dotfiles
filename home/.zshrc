@@ -141,6 +141,7 @@ alias aumount="bashmount"
 # alias LOUDER="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 150%"
 # alias tooloud="pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo 100%"
 alias roar="ssh jds6696@submit.hpc.psu.edu"
+alias scan="nmcli dev wifi rescan"
 
 
 # jupyter notebooks
