@@ -65,6 +65,7 @@ settings:
     https://patient.visitnow.org: true
   content.notifications.enabled:
     https://calendar.google.com: true
+    https://claude.ai: true
     https://colab.research.google.com: true
     https://messages.google.com: true
     https://www.evernote.com: false
@@ -85,7 +86,5 @@ settings:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}
       gs: https://scholar.google.com/scholar?hl=en&as_sdt=8%2C39&q={}
-      gpt: https://chatgpt.com/?q={}
-      # gpt: https://chatgpt.com/?temporary-chat=true&q={}
   url.start_pages:
     global: https://google.com
