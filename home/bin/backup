@@ -13,7 +13,7 @@ timeshift --create --snapshot-device /dev/sda3 --rsync
 
 # Backup with Borg
 # https://borgbackup.readthedocs.io/en/stable/quickstart.html#important-note-about-permissions
-#export BORG_PASSCOMMAND='gpg --decrypt /home/jds6696/.secrets/borg-passphrase.gpg'
+# export BORG_PASSCOMMAND='gpg --decrypt /home/jds6696/.bw_secret.gpg'
 DATE=$(date --iso-8601)-$(hostname)
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
 export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no
