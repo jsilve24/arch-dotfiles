@@ -1,1 +1,0 @@
-../../../.homesick/repos/arch-dotfiles/home/.codex/skills/emacs-maintenance/SKILL.md
