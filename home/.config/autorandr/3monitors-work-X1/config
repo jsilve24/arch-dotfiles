@@ -23,7 +23,7 @@ x-prop-non_desktop 0
 output eDP-1
 crtc 0
 mode 1920x1200
-pos 0x653
+pos 0x720
 primary
 rate 60.03
 x-prop-broadcast_rgb Automatic
@@ -34,7 +34,7 @@ x-prop-scaling_mode Full aspect
 output DP-3-1
 crtc 1
 mode 2560x1080
-pos 1920x773
+pos 1920x840
 rate 60.00
 x-prop-audio auto
 x-prop-broadcast_rgb Automatic

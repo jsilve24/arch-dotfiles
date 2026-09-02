@@ -59,6 +59,7 @@ settings:
     https://meet.google.com: true
     https://patient.visitnow.org: true
   content.media.audio_video_capture:
+    https://meet.google.com: true
     https://patient.visitnow.org: true
   content.media.video_capture:
     https://meet.google.com: true

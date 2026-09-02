@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""Summarize distinct cards introduced over recent Anki days."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+from typing import Any
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
+
+
+DEFAULT_URL = "http://127.0.0.1:8765"
+DAILY_DAYS = 7
+SUMMARY_WINDOWS = (*range(1, DAILY_DAYS + 1), 30, 365)
+
+
+def anki_request(url: str, action: str, params: dict[str, Any]) -> Any:
+    payload = json.dumps(
+        {"action": action, "version": 6, "params": params}
+    ).encode("utf-8")
+    request = Request(
+        url,
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+
+    try:
+        with urlopen(request, timeout=10) as response:
+            body = json.load(response)
+    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as error:
+        raise RuntimeError(
+            f"could not contact AnkiConnect at {url}; "
+            "make sure Anki is open and AnkiConnect is enabled"
+        ) from error
+
+    if not isinstance(body, dict) or "result" not in body or "error" not in body:
+        raise RuntimeError("AnkiConnect returned a malformed response")
+    if body["error"] is not None:
+        raise RuntimeError(f"AnkiConnect error: {body['error']}")
+    return body["result"]
+
+
+def quote_search_value(value: str) -> str:
+    """Quote a value for use in an Anki search term."""
+    return value.replace("\\", "\\\\").replace('"', '\\"')
+
+
+def build_query(days: int, deck: str | None, search: str | None) -> str:
+    """Build a cumulative introduced-within-N-days Anki search."""
+    terms = [f"introduced:{days}"]
+    if deck:
+        terms.append(f'deck:"{quote_search_value(deck)}"')
+    if search:
+        terms.append(f"({search})")
+    return " ".join(terms)
+
+
+def day_label(days_ago: int) -> str:
+    if days_ago == 0:
+        return "Today"
+    if days_ago == 1:
+        return "Yesterday"
+    return f"{days_ago} days ago"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Summarize distinct cards first answered during recent Anki days. "
+            "Repeated learning steps for the same card count only once."
+        )
+    )
+    parser.add_argument(
+        "--deck",
+        metavar="NAME",
+        help="only count cards in this deck (including its subdecks)",
+    )
+    parser.add_argument(
+        "--search",
+        metavar="QUERY",
+        help="add an arbitrary Anki search filter",
+    )
+    parser.add_argument(
+        "--count",
+        action="store_true",
+        help="print only today's number",
+    )
+    parser.add_argument(
+        "--ids",
+        action="store_true",
+        help="also print today's matching card IDs",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="print JSON",
+    )
+    parser.add_argument(
+        "--url",
+        default=os.environ.get("ANKICONNECT_URL", DEFAULT_URL),
+        help="AnkiConnect URL (default: %(default)s)",
+    )
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    queries = {
+        days: build_query(days, args.deck, args.search)
+        for days in SUMMARY_WINDOWS
+    }
+    actions = [
+        {"action": "findCards", "params": {"query": queries[days]}}
+        for days in SUMMARY_WINDOWS
+    ]
+
+    try:
+        responses = anki_request(args.url, "multi", {"actions": actions})
+    except RuntimeError as error:
+        print(f"anki-today: {error}", file=sys.stderr)
+        return 1
+
+    if (
+        not isinstance(responses, list)
+        or len(responses) != len(SUMMARY_WINDOWS)
+        or any(not isinstance(card_ids, list) for card_ids in responses)
+    ):
+        print("anki-today: AnkiConnect returned invalid card lists", file=sys.stderr)
+        return 1
+
+    cumulative = {
+        days: set(card_ids)
+        for days, card_ids in zip(SUMMARY_WINDOWS, responses)
+    }
+    daily = []
+    for days_ago in range(DAILY_DAYS):
+        card_ids = (
+            cumulative[1]
+            if days_ago == 0
+            else cumulative[days_ago + 1] - cumulative[days_ago]
+        )
+        daily.append(
+            {
+                "days_ago": days_ago,
+                "label": day_label(days_ago),
+                "count": len(card_ids),
+                "card_ids": sorted(card_ids),
+            }
+        )
+
+    if args.json:
+        result: dict[str, Any] = {
+            "daily": [
+                {
+                    key: value
+                    for key, value in day.items()
+                    if key != "card_ids" or args.ids
+                }
+                for day in daily
+            ],
+            "periods": {
+                "7_days": len(cumulative[7]),
+                "30_days": len(cumulative[30]),
+                "365_days": len(cumulative[365]),
+            },
+        }
+        if args.deck or args.search:
+            result["filters"] = {
+                key: value
+                for key, value in {"deck": args.deck, "search": args.search}.items()
+                if value
+            }
+        print(json.dumps(result, indent=2))
+    elif args.count:
+        print(daily[0]["count"])
+    else:
+        print("Distinct new cards introduced")
+        for day in daily:
+            print(f"{day['label']:<16} {day['count']:>6}")
+        print()
+        print(f"{'Past 7 days':<16} {len(cumulative[7]):>6}")
+        print(f"{'Past 30 days':<16} {len(cumulative[30]):>6}")
+        print(f"{'Past 365 days':<16} {len(cumulative[365]):>6}")
+        if args.ids:
+            print("\nToday's card IDs")
+            print("\n".join(str(card_id) for card_id in daily[0]["card_ids"]))
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

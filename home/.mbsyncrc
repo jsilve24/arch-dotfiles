@@ -85,7 +85,8 @@ AuthMechs LOGIN
 SSLType None
 User jds6696@psu.edu
 PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.psu_mailpass.gpg"
-Timeout 10000
+# DavMail may need substantially longer here when Microsoft forces MFA.
+Timeout 300000
 PipelineDepth 1
 
 IMAPStore psu-remote

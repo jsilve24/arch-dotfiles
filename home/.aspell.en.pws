@@ -1,4 +1,4 @@
-personal_ws-1.1 en 1306 
+personal_ws-1.1 en 1312 
 AFOR
 AIC
 ANOVA
@@ -235,25 +235,30 @@ Schwarz
 Schwarz's
 Seeger
 Seidel
+Semiparametrics
 Silverman
 Silverman's
 Smirnov
+Spearman
 Speciation
 Stirling's
 Strategize
 Team
+Tensorization
 Tibshirani
 Tikhonov
 Toeplitz
 Translational
 UCI
 UKF
+UMVUE
 VLSI
 Vapnik
 Vayatis
 Viterbi
 WEKA
 WLS
+Wasserstein
 Welch
 Wilcoxon
 Wishart
@@ -1175,6 +1180,7 @@ summands
 summarise
 summarization
 summarizations
+summative
 superadditive
 superclass
 supergraph
