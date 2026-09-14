@@ -32,3 +32,5 @@ x-scheme-handler/org-protocol=org-protocol.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/slack=slack.desktop
 x-scheme-handler/codex=chatgpt.desktop
+text/csv=libreoffice-calc.desktop
+application/csv=libreoffice-calc.desktop
